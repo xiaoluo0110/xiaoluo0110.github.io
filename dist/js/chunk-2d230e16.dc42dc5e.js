@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d230e16"],{edbc:function(n,p,c){n.exports=c.p+"img/fujian230905.f83b7c9d.png"}}]);
+//# sourceMappingURL=chunk-2d230e16.dc42dc5e.js.map
