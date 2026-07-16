@@ -18,8 +18,23 @@ const menusRoot = ref(null)
 
 const langs = [
   { value: 'zh', label: '中文' },
+  { value: 'zh-TW', label: '繁體中文' },
   { value: 'en', label: 'English' },
+  { value: 'ja', label: '日本語' },
+  { value: 'ko', label: '한국어' },
+  { value: 'th', label: 'ไทย' },
+  { value: 'vi', label: 'Tiếng Việt' },
+  { value: 'ms', label: 'Bahasa Melayu' },
+  { value: 'fr', label: 'Français' },
+  { value: 'de', label: 'Deutsch' },
+  { value: 'ru', label: 'Русский' },
+  { value: 'ar', label: 'العربية' },
 ]
+
+function applyDocumentDir(value) {
+  document.documentElement.dir = value === 'ar' ? 'rtl' : 'ltr'
+  document.documentElement.lang = value
+}
 
 const links = [
   { id: 'home', labelKey: 'nav.home' },
@@ -51,6 +66,7 @@ function pickTheme(id) {
 function pickLang(value) {
   locale.value = value
   localStorage.setItem('locale', value)
+  applyDocumentDir(value)
   openMenu.value = null
 }
 
@@ -62,6 +78,7 @@ function onDocClick(e) {
 }
 
 onMounted(() => {
+  applyDocumentDir(locale.value)
   document.addEventListener('click', onDocClick)
 })
 
@@ -249,8 +266,10 @@ onUnmounted(() => {
 .menu-panel {
   position: absolute;
   top: calc(100% + 0.5rem);
-  right: 0;
+  inset-inline-end: 0;
   min-width: 148px;
+  max-height: min(70vh, 420px);
+  overflow-y: auto;
   padding: 0.4rem;
   border: 1px solid var(--border-soft);
   border-radius: 12px;
@@ -269,7 +288,7 @@ onUnmounted(() => {
   background: transparent;
   color: var(--text);
   font-size: 0.88rem;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   transition: background-color 0.15s ease;
 }

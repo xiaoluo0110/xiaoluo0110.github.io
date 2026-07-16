@@ -1,3 +1,18 @@
+const langLabels = {
+  zh: '中文',
+  'zh-TW': '繁體中文',
+  en: 'English',
+  ja: '日本語',
+  ko: '한국어',
+  th: 'ไทย',
+  vi: 'Tiếng Việt',
+  ms: 'Bahasa Melayu',
+  fr: 'Français',
+  de: 'Deutsch',
+  ru: 'Русский',
+  ar: 'العربية',
+}
+
 export const messages = {
   zh: {
     nav: {
@@ -140,15 +155,15 @@ export const messages = {
           desc: '处理地图、图层与时空数据，做可读的空间叙事。',
         },
         engine: {
-          label: '三维引擎',
-          desc: '在 Cesium、ArcGIS、Three.js 之间选择合适的三维表达。',
+          label: '三维可视化',
+          desc: '从地球级场景到室内精细模型，按数据形态与交互需求，选择合适的三维引擎与可视化方案。',
         },
         viz: {
           label: '视觉叙事',
           desc: '把抽象概念转成图形语言，服务学习与业务决策。',
         },
       },
-      stack: ['Vue', 'Canvas', 'Cesium', 'ArcGIS', 'Three.js', '数据可视化'],
+      stack: ['Vue', 'WebGL', '数字孪生', 'GIS', '三维可视化', '交互设计'],
     },
     contact: {
       label: '联系',
@@ -165,10 +180,175 @@ export const messages = {
       children: '儿童',
       tech: '科技',
     },
-    lang: {
-      zh: '中文',
-      en: 'English',
+    lang: langLabels,
+  },
+  'zh-TW': {
+    nav: {
+      home: '首頁',
+      focus: '方向',
+      featured: '精選',
+      tools: '學科工具',
+      spatial: '三維演示',
+      scenarios: '應用場景',
+      about: '關於',
     },
+    hero: {
+      role: '視覺化開發 · 數形與空間',
+      title: '小葉羅',
+      subtitle:
+        '我做互動式視覺化：把數學概念、地理空間與業務資料，做成能看、能玩、能講清楚的圖形與三維場景。',
+      start: '瀏覽作品',
+      about: '了解我',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: '三件事，貫穿我的作品',
+      desc: '不是單純堆專案連結，而是圍繞「理解—呈現—落地」持續做視覺化實驗與產品。',
+      items: {
+        tools: {
+          title: '學科視覺化',
+          desc: '用圖形建立直覺，讓抽象概念變得可操作。',
+          keywords: ['數學', '地理', '物理'],
+        },
+        spatial: {
+          title: '三維空間表達',
+          desc: '用 Cesium / ArcGIS / Three.js 探索真實世界的三維呈現。',
+          keywords: ['地球場景', '城市模型', '即時渲染'],
+        },
+        scenarios: {
+          title: '應用場景落地',
+          desc: '把視覺化接到真實需求：氣象分析、館藏展示等。',
+          keywords: ['氣象', '文博', '業務系統'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: '精選作品',
+      desc: '先看代表性成果，再按分類深入探索。',
+      prev: '上一張',
+      next: '下一張',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: '移動滑鼠即時回應',
+    },
+    categories: {
+      tools: {
+        label: '學科工具',
+        chapter: '板塊 01',
+        title: '學科視覺化',
+        desc: '面向數學、地理與物理的互動式視覺化工具，用圖形建立直覺。',
+      },
+      spatial: {
+        label: '三維演示',
+        chapter: '板塊 02',
+        title: '三維視覺化 Demo',
+        desc: '基於 Cesium、ArcGIS 與 Three.js 的三維場景實驗，探索空間資料與即時渲染。',
+      },
+      scenarios: {
+        label: '應用場景',
+        chapter: '板塊 03',
+        title: '落地應用展示',
+        desc: '面向真實業務的視覺化應用，包括氣象分析與館藏數位化展示等。',
+      },
+    },
+    items: {
+      math: {
+        title: '數學視覺化',
+        desc: '數形視界 —— 用互動圖形理解函數、幾何與動態演算。',
+        cta: '進入數學視覺化',
+        tags: ['函數圖像', '幾何變換', '互動演算'],
+      },
+      geography: {
+        title: '地理視覺化',
+        desc: '空間格局與地理過程的互動呈現，即將上線。',
+        cta: '即將開放',
+        tags: ['空間分析', '地圖敘事', '區域過程'],
+      },
+      physics: {
+        title: '物理視覺化',
+        desc: '力學、波動與場等概念的動態演示，規劃中。',
+        cta: '即將開放',
+        tags: ['力學模擬', '波動干涉', '場線視覺化'],
+      },
+      weather: {
+        title: '氣象視覺化',
+        desc: '氣象資料的空間呈現 —— 圖層疊加、時空演變與分析視圖。',
+        cta: '進入氣象視覺化',
+        tags: ['天氣圖層', '時空演變', '分析視圖'],
+      },
+      cesium: {
+        title: 'Cesium 三維',
+        desc: '以 Cesium 為核心的地球級三維視覺化 Demo。',
+        cta: '即將開放',
+        tags: ['全球地形', '時空軌跡', '傾斜攝影'],
+      },
+      arcgis: {
+        title: 'ArcGIS 三維',
+        desc: '基於 ArcGIS 的三維場景與 GIS 分析演示。',
+        cta: '即將開放',
+        tags: ['場景圖層', '城市模型', '空間分析'],
+      },
+      threejs: {
+        title: 'Three.js 三維',
+        desc: '以 Three.js 驅動的互動三維渲染與創意視覺化。',
+        cta: '即將開放',
+        tags: ['即時渲染', '材質光影', '互動場景'],
+      },
+      museum: {
+        title: '館藏展示',
+        desc: '博物館藏品的數位化瀏覽與敘事展示，規劃接入中。',
+        cta: '即將開放',
+        tags: ['藏品瀏覽', '數位敘事', '沉浸展陳'],
+      },
+    },
+    status: {
+      live: '已上線',
+      soon: '規劃中',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: '關於我',
+      bio: '我是小葉羅，專注互動式視覺化與空間表達——讓複雜資訊變得可見、可感、可用。',
+      desc: '這裡是我的作品導航站：一邊做學科視覺化工具，一邊試驗三維引擎，一邊把能力落到氣象、文博等真實場景。這裡持續更新。',
+      craftTitle: '我怎麼做',
+      craft: {
+        vue: {
+          label: '前端與互動',
+          desc: '用 Vue 等技術搭建可操作的視覺化介面與動效。',
+        },
+        gis: {
+          label: 'GIS 與空間資料',
+          desc: '處理地圖、圖層與時空資料，做可讀的空間敘事。',
+        },
+        engine: {
+          label: '三維視覺化',
+          desc: '從地球級場景到室內精細模型，依資料形態與互動需求，選擇合適的三維引擎與視覺化方案。',
+        },
+        viz: {
+          label: '視覺敘事',
+          desc: '把抽象概念轉成圖形語言，服務學習與業務決策。',
+        },
+      },
+      stack: ['Vue', 'WebGL', '數位孿生', 'GIS', '三維視覺化', '互動設計'],
+    },
+    contact: {
+      label: '聯繫',
+      name: '小葉羅',
+      qq: 'QQ',
+      email: '信箱',
+      douyin: '抖音',
+    },
+    theme: {
+      label: '主題',
+      dark: '暗色',
+      light: '淺色',
+      campus: '校園',
+      children: '兒童',
+      tech: '科技',
+    },
+    lang: langLabels,
   },
   en: {
     nav: {
@@ -311,15 +491,15 @@ export const messages = {
           desc: 'Work with maps, layers, and spatiotemporal data for spatial storytelling.',
         },
         engine: {
-          label: '3D engines',
-          desc: 'Choose among Cesium, ArcGIS, and Three.js for the right 3D expression.',
+          label: '3D visualization',
+          desc: 'From globe-scale scenes to detailed indoor models — choosing the right 3D engine and visualization approach based on data form and interaction needs.',
         },
         viz: {
           label: 'Visual narrative',
           desc: 'Turn abstract ideas into graphic language for learning and decisions.',
         },
       },
-      stack: ['Vue', 'Canvas', 'Cesium', 'ArcGIS', 'Three.js', 'Data Viz'],
+      stack: ['Vue', 'WebGL', 'Digital Twin', 'GIS', '3D Visualization', 'Interaction Design'],
     },
     contact: {
       label: 'Contact',
@@ -336,9 +516,1519 @@ export const messages = {
       children: 'Kids',
       tech: 'Tech',
     },
-    lang: {
-      zh: '中文',
-      en: 'English',
+    lang: langLabels,
+  },
+  ja: {
+    nav: {
+      home: 'ホーム',
+      focus: '方針',
+      featured: '注目',
+      tools: '教科ツール',
+      spatial: '3Dデモ',
+      scenarios: '活用事例',
+      about: 'について',
     },
+    hero: {
+      role: '可視化開発 · 数形と空間',
+      title: 'Debbie',
+      subtitle:
+        'インタラクティブな可視化を手がけています。数学・地理空間・業務データを、見て触れ、理解できるグラフィックと3Dシーンにします。',
+      start: '作品を見る',
+      about: '自己紹介',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: '作品を貫く三つの軸',
+      desc: 'リンクの羅列ではなく、「理解—表現—実装」を軸に可視化の実験とプロダクトを続けています。',
+      items: {
+        tools: {
+          title: '教科可視化',
+          desc: 'グラフィックで直感を育て、抽象概念を操作可能にします。',
+          keywords: ['数学', '地理', '物理'],
+        },
+        spatial: {
+          title: '3D空間表現',
+          desc: 'Cesium / ArcGIS / Three.js で現実世界の3D表現を探ります。',
+          keywords: ['地球シーン', '都市モデル', 'リアルタイム'],
+        },
+        scenarios: {
+          title: '現場への適用',
+          desc: '気象分析や収蔵展示など、現実のニーズに可視化をつなげます。',
+          keywords: ['気象', 'ミュージアム', '業務システム'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: '注目作品',
+      desc: '代表作から見て、カテゴリ別に深く探索できます。',
+      prev: '前へ',
+      next: '次へ',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'マウスを動かして操作',
+    },
+    categories: {
+      tools: {
+        label: '教科ツール',
+        chapter: 'セクション 01',
+        title: '教科可視化',
+        desc: '数学・地理・物理向けのインタラクティブ可視化ツール。グラフィックで直感を育てます。',
+      },
+      spatial: {
+        label: '3Dデモ',
+        chapter: 'セクション 02',
+        title: '3D可視化デモ',
+        desc: 'Cesium、ArcGIS、Three.js による3Dシーン実験。空間データとリアルタイム描画を探求します。',
+      },
+      scenarios: {
+        label: '活用事例',
+        chapter: 'セクション 03',
+        title: '実装事例の展示',
+        desc: '気象分析や収蔵品のデジタル展示など、実務向け可視化アプリケーション。',
+      },
+    },
+    items: {
+      math: {
+        title: '数学可視化',
+        desc: '関数・幾何・動的計算をインタラクティブな図で理解します。',
+        cta: '数学可視化を開く',
+        tags: ['関数グラフ', '幾何変換', '対話演算'],
+      },
+      geography: {
+        title: '地理可視化',
+        desc: '空間パターンと地理過程のインタラクティブ表現 — 近日公開。',
+        cta: '近日公開',
+        tags: ['空間分析', '地図ナラティブ', '地域プロセス'],
+      },
+      physics: {
+        title: '物理可視化',
+        desc: '力学・波動・場などの動的デモ — 計画中。',
+        cta: '近日公開',
+        tags: ['力学シミュレーション', '波動干渉', '磁力線可視化'],
+      },
+      weather: {
+        title: '気象可視化',
+        desc: '気象データの空間表現 — レイヤー重ね、時空間変化、分析ビュー。',
+        cta: '気象可視化を開く',
+        tags: ['天気レイヤー', '時空間変化', '分析ビュー'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'Cesium を核とした地球規模の3D可視化デモ。',
+        cta: '近日公開',
+        tags: ['全球地形', '時空間軌跡', '傾斜写真'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: 'ArcGIS による3DシーンとGIS分析デモ。',
+        cta: '近日公開',
+        tags: ['シーンレイヤー', '都市モデル', '空間分析'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Three.js によるインタラクティブ3Dレンダリングとクリエイティブ可視化。',
+        cta: '近日公開',
+        tags: ['リアルタイム描画', 'マテリアル', '対話シーン'],
+      },
+      museum: {
+        title: '収蔵展示',
+        desc: '博物館収蔵品のデジタル閲覧とナラティブ展示 — 接続準備中。',
+        cta: '近日公開',
+        tags: ['収蔵閲覧', 'デジタル物語', '没入展示'],
+      },
+    },
+    status: {
+      live: '公開中',
+      soon: '計画中',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: '自己紹介',
+      bio: 'Debbie です。インタラクティブ可視化と空間表現に取り組み、複雑な情報を見える・感じる・使えるものにします。',
+      desc: 'ここは作品ナビ：教科可視化ツール、3Dエンジン実験、気象やミュージアムなど現場への適用を続けています。随時更新。',
+      craftTitle: '作り方',
+      craft: {
+        vue: {
+          label: 'フロントエンドと操作',
+          desc: 'Vue などで操作できる可視化UIとモーションを構築します。',
+        },
+        gis: {
+          label: 'GISと空間データ',
+          desc: '地図・レイヤー・時空間データを扱い、読みやすい空間物語を作ります。',
+        },
+        engine: {
+          label: '3D可視化',
+          desc: '地球規模のシーンから室内の精細モデルまで、データの形態とインタラクション要件に応じて、適切な3Dエンジンと可視化方案を選びます。',
+        },
+        viz: {
+          label: 'ビジュアル物語',
+          desc: '抽象概念をグラフィック言語に変え、学習と意思決定を支えます。',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'デジタルツイン', 'GIS', '3D可視化', 'インタラクション設計'],
+    },
+    contact: {
+      label: '連絡',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'メール',
+      douyin: '抖音',
+    },
+    theme: {
+      label: 'テーマ',
+      dark: 'ダーク',
+      light: 'ライト',
+      campus: 'キャンパス',
+      children: 'キッズ',
+      tech: 'テック',
+    },
+    lang: langLabels,
+  },
+  ko: {
+    nav: {
+      home: '홈',
+      focus: '방향',
+      featured: '추천',
+      tools: '교과 도구',
+      spatial: '3D 데모',
+      scenarios: '적용 사례',
+      about: '소개',
+    },
+    hero: {
+      role: '시각화 개발 · 수형과 공간',
+      title: 'Debbie',
+      subtitle:
+        '인터랙티브 시각화를 만듭니다. 수학 개념, 지리 공간, 업무 데이터를 보고 다루며 이해할 수 있는 그래픽과 3D 장면으로 바꿉니다.',
+      start: '작품 보기',
+      about: '소개',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: '작품을 관통하는 세 가지',
+      desc: '링크 나열이 아니라 「이해—표현—구현」을 중심으로 시각화 실험과 제품을 이어갑니다.',
+      items: {
+        tools: {
+          title: '교과 시각화',
+          desc: '그래픽으로 직관을 키워 추상 개념을 조작할 수 있게 합니다.',
+          keywords: ['수학', '지리', '물리'],
+        },
+        spatial: {
+          title: '3D 공간 표현',
+          desc: 'Cesium / ArcGIS / Three.js로 현실 세계의 3D 표현을 탐구합니다.',
+          keywords: ['지구 장면', '도시 모델', '실시간 렌더'],
+        },
+        scenarios: {
+          title: '현장 적용',
+          desc: '기상 분석, 소장품 전시 등 실제 요구에 시각화를 연결합니다.',
+          keywords: ['기상', '박물관', '업무 시스템'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: '추천 작품',
+      desc: '대표 성과를 먼저 보고, 분류별로 깊이 탐색하세요.',
+      prev: '이전',
+      next: '다음',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: '마우스를 움직여 상호작용',
+    },
+    categories: {
+      tools: {
+        label: '교과 도구',
+        chapter: '섹션 01',
+        title: '교과 시각화',
+        desc: '수학·지리·물리를 위한 인터랙티브 시각화 도구. 그래픽으로 직관을 만듭니다.',
+      },
+      spatial: {
+        label: '3D 데모',
+        chapter: '섹션 02',
+        title: '3D 시각화 데모',
+        desc: 'Cesium, ArcGIS, Three.js 기반 3D 장면 실험. 공간 데이터와 실시간 렌더링을 탐구합니다.',
+      },
+      scenarios: {
+        label: '적용 사례',
+        chapter: '섹션 03',
+        title: '현장 적용 전시',
+        desc: '기상 분석과 소장품 디지털 전시 등 실무형 시각화 애플리케이션.',
+      },
+    },
+    items: {
+      math: {
+        title: '수학 시각화',
+        desc: '함수, 기하, 동적 연산을 인터랙티브 그래픽으로 이해합니다.',
+        cta: '수학 시각화 열기',
+        tags: ['함수 그래프', '기하 변환', '대화형 연산'],
+      },
+      geography: {
+        title: '지리 시각화',
+        desc: '공간 패턴과 지리 과정의 인터랙티브 표현 — 곧 공개.',
+        cta: '곧 공개',
+        tags: ['공간 분석', '지도 서사', '지역 과정'],
+      },
+      physics: {
+        title: '물리 시각화',
+        desc: '역학, 파동, 장 등의 동적 데모 — 계획 중.',
+        cta: '곧 공개',
+        tags: ['역학 시뮬레이션', '파동 간섭', '장선 시각화'],
+      },
+      weather: {
+        title: '기상 시각화',
+        desc: '기상 데이터의 공간 표현 — 레이어 중첩, 시공간 변화, 분석 뷰.',
+        cta: '기상 시각화 열기',
+        tags: ['날씨 레이어', '시공간 변화', '분석 뷰'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'Cesium 기반의 지구 규모 3D 시각화 데모.',
+        cta: '곧 공개',
+        tags: ['전지구 지형', '시공간 궤적', '경사 사진'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: 'ArcGIS 기반 3D 장면과 GIS 분석 데모.',
+        cta: '곧 공개',
+        tags: ['장면 레이어', '도시 모델', '공간 분석'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Three.js로 구동하는 인터랙티브 3D 렌더링과 크리에이티브 시각화.',
+        cta: '곧 공개',
+        tags: ['실시간 렌더', '재질·조명', '인터랙션 장면'],
+      },
+      museum: {
+        title: '소장품 전시',
+        desc: '박물관 소장품의 디지털 열람과 서사 전시 — 연동 준비 중.',
+        cta: '곧 공개',
+        tags: ['소장품 열람', '디지털 서사', '몰입 전시'],
+      },
+    },
+    status: {
+      live: '공개됨',
+      soon: '계획 중',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: '소개',
+      bio: '저는 Debbie입니다. 인터랙티브 시각화와 공간 표현에 집중하며, 복잡한 정보를 보이고 느끼고 쓸 수 있게 만듭니다.',
+      desc: '이곳은 작품 내비: 교과 시각화 도구, 3D 엔진 실험, 기상·박물관 등 현장 적용을 이어갑니다. 계속 업데이트됩니다.',
+      craftTitle: '작업 방식',
+      craft: {
+        vue: {
+          label: '프론트엔드와 인터랙션',
+          desc: 'Vue 등으로 조작 가능한 시각화 UI와 모션을 만듭니다.',
+        },
+        gis: {
+          label: 'GIS와 공간 데이터',
+          desc: '지도, 레이어, 시공간 데이터를 다루며 읽기 쉬운 공간 서사를 만듭니다.',
+        },
+        engine: {
+          label: '3D 시각화',
+          desc: '지구 규모 장면부터 실내 정밀 모델까지, 데이터 형태와 인터랙션 요구에 맞는 3D 엔진과 시각화 방안을 선택합니다.',
+        },
+        viz: {
+          label: '시각 서사',
+          desc: '추상 개념을 그래픽 언어로 바꿔 학습과 의사결정을 돕습니다.',
+        },
+      },
+      stack: ['Vue', 'WebGL', '디지털 트윈', 'GIS', '3D 시각화', '인터랙션 디자인'],
+    },
+    contact: {
+      label: '연락',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: '이메일',
+      douyin: '抖音',
+    },
+    theme: {
+      label: '테마',
+      dark: '다크',
+      light: '라이트',
+      campus: '캠퍼스',
+      children: '키즈',
+      tech: '테크',
+    },
+    lang: langLabels,
+  },
+  th: {
+    nav: {
+      home: 'หน้าแรก',
+      focus: 'ทิศทาง',
+      featured: 'ผลงานเด่น',
+      tools: 'เครื่องมือวิชา',
+      spatial: 'เดโม 3D',
+      scenarios: 'กรณีใช้งาน',
+      about: 'เกี่ยวกับ',
+    },
+    hero: {
+      role: 'พัฒนาวิชวลไลเซชัน · คณิตศาสตร์กับพื้นที่',
+      title: 'Debbie',
+      subtitle:
+        'ฉันสร้างวิชวลไลเซชันแบบโต้ตอบ เปลี่ยนแนวคิดคณิตศาสตร์ พื้นที่ภูมิศาสตร์ และข้อมูลธุรกิจ ให้เป็นกราฟิกและฉาก 3D ที่ดู เล่น และเข้าใจได้',
+      start: 'ดูผลงาน',
+      about: 'เกี่ยวกับฉัน',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'สามแกนที่ผ่านผลงานของฉัน',
+      desc: 'ไม่ใช่แค่รวบลิงก์ แต่ทดลองและสร้างผลิตภัณฑ์วิชวลไลเซชันรอบความเข้าใจ การนำเสนอ และการนำไปใช้จริงอย่างต่อเนื่อง',
+      items: {
+        tools: {
+          title: 'วิชวลไลเซชันวิชา',
+          desc: 'สร้างสัญชาตญาณด้วยกราฟิก ทำให้แนวคิดนามธรรมจับต้องได้',
+          keywords: ['คณิตศาสตร์', 'ภูมิศาสตร์', 'ฟิสิกส์'],
+        },
+        spatial: {
+          title: 'การแสดงออกเชิงพื้นที่ 3D',
+          desc: 'สำรวจการนำเสนอ 3D ของโลกจริงด้วย Cesium / ArcGIS / Three.js',
+          keywords: ['ฉากโลก', 'โมเดลเมือง', 'เรนเดอร์เรียลไทม์'],
+        },
+        scenarios: {
+          title: 'นำไปใช้จริง',
+          desc: 'เชื่อมวิชวลไลเซชันกับความต้องการจริง เช่น วิเคราะห์สภาพอากาศ และการจัดแสดงของสะสม',
+          keywords: ['อากาศ', 'พิพิธภัณฑ์', 'ระบบธุรกิจ'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'ผลงานเด่น',
+      desc: 'ดูผลงานตัวแทนก่อน แล้วสำรวจลึกตามหมวด',
+      prev: 'ก่อนหน้า',
+      next: 'ถัดไป',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'เลื่อนเมาส์เพื่อโต้ตอบ',
+    },
+    categories: {
+      tools: {
+        label: 'เครื่องมือวิชา',
+        chapter: 'ส่วน 01',
+        title: 'วิชวลไลเซชันวิชา',
+        desc: 'เครื่องมือวิชวลไลเซชันแบบโต้ตอบสำหรับคณิตศาสตร์ ภูมิศาสตร์ และฟิสิกส์ สร้างสัญชาตญาณด้วยกราฟิก',
+      },
+      spatial: {
+        label: 'เดโม 3D',
+        chapter: 'ส่วน 02',
+        title: 'เดโมวิชวลไลเซชัน 3D',
+        desc: 'ทดลองฉาก 3D ด้วย Cesium, ArcGIS และ Three.js สำรวจข้อมูลเชิงพื้นที่และการเรนเดอร์แบบเรียลไทม์',
+      },
+      scenarios: {
+        label: 'กรณีใช้งาน',
+        chapter: 'ส่วน 03',
+        title: 'การนำไปใช้จริง',
+        desc: 'แอปวิชวลไลเซชันสำหรับธุรกิจจริง รวมการวิเคราะห์สภาพอากาศและการจัดแสดงคอลเลกชันดิจิทัล',
+      },
+    },
+    items: {
+      math: {
+        title: 'วิชวลไลเซชันคณิตศาสตร์',
+        desc: 'เข้าใจฟังก์ชัน เรขาคณิต และการคำนวณแบบไดนามิกด้วยกราฟิกโต้ตอบ',
+        cta: 'เปิดวิชวลไลเซชันคณิตศาสตร์',
+        tags: ['กราฟฟังก์ชัน', 'การแปลงเรขาคณิต', 'การคำนวณโต้ตอบ'],
+      },
+      geography: {
+        title: 'วิชวลไลเซชันภูมิศาสตร์',
+        desc: 'การแสดงรูปแบบเชิงพื้นที่และกระบวนการทางภูมิศาสตร์แบบโต้ตอบ — เร็วๆ นี้',
+        cta: 'เร็วๆ นี้',
+        tags: ['วิเคราะห์เชิงพื้นที่', 'เรื่องเล่าแผนที่', 'กระบวนการภูมิภาค'],
+      },
+      physics: {
+        title: 'วิชวลไลเซชันฟิสิกส์',
+        desc: 'เดโมเชิงพลวัตของกลศาสตร์ คลื่น และสนาม — อยู่ระหว่างวางแผน',
+        cta: 'เร็วๆ นี้',
+        tags: ['จำลองกลศาสตร์', 'การแทรกสอดของคลื่น', 'เส้นสนาม'],
+      },
+      weather: {
+        title: 'วิชวลไลเซชันสภาพอากาศ',
+        desc: 'การนำเสนอข้อมูลอากาศเชิงพื้นที่ — เลเยอร์ การเปลี่ยนแปลงเชิงเวลา และมุมมองวิเคราะห์',
+        cta: 'เปิดวิชวลไลเซชันสภาพอากาศ',
+        tags: ['เลเยอร์อากาศ', 'การเปลี่ยนแปลงเชิงเวลา', 'มุมมองวิเคราะห์'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'เดโมวิชวลไลเซชัน 3D ระดับโลกด้วย Cesium',
+        cta: 'เร็วๆ นี้',
+        tags: ['ภูมิประเทศโลก', 'เส้นทางเชิงเวลา', 'ภาพเอียง'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: 'ฉาก 3D และการวิเคราะห์ GIS ด้วย ArcGIS',
+        cta: 'เร็วๆ นี้',
+        tags: ['เลเยอร์ฉาก', 'โมเดลเมือง', 'วิเคราะห์เชิงพื้นที่'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'เรนเดอร์ 3D แบบโต้ตอบและวิชวลไลเซชันเชิงสร้างสรรค์ด้วย Three.js',
+        cta: 'เร็วๆ นี้',
+        tags: ['เรนเดอร์เรียลไทม์', 'วัสดุและแสง', 'ฉากโต้ตอบ'],
+      },
+      museum: {
+        title: 'การจัดแสดงของสะสม',
+        desc: 'การเรียกดูดิจิทัลและการเล่าเรื่องของคอลเลกชันพิพิธภัณฑ์ — อยู่ระหว่างเชื่อมต่อ',
+        cta: 'เร็วๆ นี้',
+        tags: ['เรียกดูของสะสม', 'เรื่องเล่าดิจิทัล', 'จัดแสดงแบบดื่มด่ำ'],
+      },
+    },
+    status: {
+      live: 'เปิดใช้แล้ว',
+      soon: 'วางแผนอยู่',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'เกี่ยวกับฉัน',
+      bio: 'ฉันคือ Debbie มุ่งเน้นวิชวลไลเซชันแบบโต้ตอบและการแสดงออกเชิงพื้นที่ — ทำให้ข้อมูลซับซ้อนมองเห็น สัมผัส และใช้งานได้',
+      desc: 'นี่คือศูนย์นำทางผลงาน: เครื่องมือวิชวลไลเซชันวิชา ทดลองเอนจิน 3D และนำไปใช้กับอากาศ พิพิธภัณฑ์ ฯลฯ อัปเดตต่อเนื่อง',
+      craftTitle: 'วิธีทำงาน',
+      craft: {
+        vue: {
+          label: 'ฟรอนต์เอนด์และการโต้ตอบ',
+          desc: 'สร้าง UI วิชวลไลเซชันที่ใช้งานได้และแอนิเมชันด้วย Vue และเทคโนโลยีที่เกี่ยวข้อง',
+        },
+        gis: {
+          label: 'GIS และข้อมูลเชิงพื้นที่',
+          desc: 'จัดการแผนที่ เลเยอร์ และข้อมูลเชิงเวลา-พื้นที่ เพื่อเล่าเรื่องเชิงพื้นที่ที่อ่านง่าย',
+        },
+        engine: {
+          label: 'การมองเห็น 3 มิติ',
+          desc: 'จากฉากระดับโลกไปจนถึงโมเดลภายในอาคารแบบละเอียด — เลือกเอนจิน 3D และแนวทางวิชวลไลเซชันตามรูปแบบข้อมูลและความต้องการโต้ตอบ',
+        },
+        viz: {
+          label: 'การเล่าเรื่องด้วยภาพ',
+          desc: 'แปลงแนวคิดนามธรรมเป็นภาษากราฟิก เพื่อการเรียนรู้และการตัดสินใจ',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'Digital Twin', 'GIS', '3D Visualization', 'Interaction Design'],
+    },
+    contact: {
+      label: 'ติดต่อ',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'อีเมล',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'ธีม',
+      dark: 'มืด',
+      light: 'สว่าง',
+      campus: 'วิทยาเขต',
+      children: 'เด็ก',
+      tech: 'เทค',
+    },
+    lang: langLabels,
+  },
+  vi: {
+    nav: {
+      home: 'Trang chủ',
+      focus: 'Hướng đi',
+      featured: 'Nổi bật',
+      tools: 'Công cụ môn học',
+      spatial: 'Demo 3D',
+      scenarios: 'Kịch bản',
+      about: 'Giới thiệu',
+    },
+    hero: {
+      role: 'Phát triển trực quan · Số hình & không gian',
+      title: 'Debbie',
+      subtitle:
+        'Tôi làm trực quan hóa tương tác — biến khái niệm toán học, không gian địa lý và dữ liệu nghiệp vụ thành đồ họa cùng cảnh 3D để xem, khám phá và hiểu rõ.',
+      start: 'Xem tác phẩm',
+      about: 'Về tôi',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'Ba trục xuyên suốt tác phẩm',
+      desc: 'Không chỉ xếp liên kết — mà liên tục thử nghiệm và làm sản phẩm quanh hiểu, trình bày và triển khai.',
+      items: {
+        tools: {
+          title: 'Trực quan môn học',
+          desc: 'Dùng đồ họa xây trực giác, khiến khái niệm trừu tượng trở nên thao tác được.',
+          keywords: ['Toán', 'Địa lý', 'Vật lý'],
+        },
+        spatial: {
+          title: 'Biểu đạt không gian 3D',
+          desc: 'Khám phá trình bày 3D thế giới thực với Cesium / ArcGIS / Three.js.',
+          keywords: ['Cảnh địa cầu', 'Mô hình đô thị', 'Render thời gian thực'],
+        },
+        scenarios: {
+          title: 'Triển khai thực tế',
+          desc: 'Gắn trực quan hóa vào nhu cầu thật: phân tích khí tượng, trưng bày bộ sưu tập…',
+          keywords: ['Khí tượng', 'Bảo tàng', 'Hệ thống nghiệp vụ'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'Tác phẩm nổi bật',
+      desc: 'Xem thành quả tiêu biểu trước, rồi khám phá sâu theo từng danh mục.',
+      prev: 'Trước',
+      next: 'Sau',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'Di chuyển chuột để tương tác',
+    },
+    categories: {
+      tools: {
+        label: 'Công cụ môn học',
+        chapter: 'Phần 01',
+        title: 'Trực quan môn học',
+        desc: 'Công cụ trực quan tương tác cho toán, địa lý và vật lý — xây trực giác bằng đồ họa.',
+      },
+      spatial: {
+        label: 'Demo 3D',
+        chapter: 'Phần 02',
+        title: 'Demo trực quan 3D',
+        desc: 'Thử nghiệm cảnh 3D với Cesium, ArcGIS và Three.js — dữ liệu không gian và render thời gian thực.',
+      },
+      scenarios: {
+        label: 'Kịch bản',
+        chapter: 'Phần 03',
+        title: 'Ứng dụng thực tế',
+        desc: 'Ứng dụng trực quan cho nghiệp vụ thật, từ phân tích khí tượng đến trưng bày số hóa bộ sưu tập.',
+      },
+    },
+    items: {
+      math: {
+        title: 'Trực quan toán học',
+        desc: 'Hiểu hàm số, hình học và phép tính động bằng đồ họa tương tác.',
+        cta: 'Mở trực quan toán',
+        tags: ['Đồ thị hàm', 'Biến đổi hình học', 'Phép tính tương tác'],
+      },
+      geography: {
+        title: 'Trực quan địa lý',
+        desc: 'Trình bày tương tác các mô hình không gian và quá trình địa lý — sắp ra mắt.',
+        cta: 'Sắp mở',
+        tags: ['Phân tích không gian', 'Kể chuyện bản đồ', 'Quá trình vùng'],
+      },
+      physics: {
+        title: 'Trực quan vật lý',
+        desc: 'Demo động cho cơ học, sóng và trường — đang lập kế hoạch.',
+        cta: 'Sắp mở',
+        tags: ['Mô phỏng cơ học', 'Giao thoa sóng', 'Đường sức trường'],
+      },
+      weather: {
+        title: 'Trực quan khí tượng',
+        desc: 'Trình bày không gian dữ liệu thời tiết — lớp chồng, biến đổi thời-không gian và góc nhìn phân tích.',
+        cta: 'Mở trực quan khí tượng',
+        tags: ['Lớp thời tiết', 'Biến đổi thời-không', 'Góc nhìn phân tích'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'Demo trực quan 3D quy mô trái đất với Cesium.',
+        cta: 'Sắp mở',
+        tags: ['Địa hình toàn cầu', 'Quỹ đạo thời-không', 'Ảnh nghiêng'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: 'Cảnh 3D và demo phân tích GIS với ArcGIS.',
+        cta: 'Sắp mở',
+        tags: ['Lớp cảnh', 'Mô hình đô thị', 'Phân tích không gian'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Render 3D tương tác và trực quan sáng tạo với Three.js.',
+        cta: 'Sắp mở',
+        tags: ['Render thời gian thực', 'Vật liệu & ánh sáng', 'Cảnh tương tác'],
+      },
+      museum: {
+        title: 'Trưng bày bộ sưu tập',
+        desc: 'Duyệt số hóa và trưng bày kể chuyện cho bộ sưu tập bảo tàng — đang kết nối.',
+        cta: 'Sắp mở',
+        tags: ['Duyệt bộ sưu tập', 'Kể chuyện số', 'Trưng bày nhập vai'],
+      },
+    },
+    status: {
+      live: 'Đã ra mắt',
+      soon: 'Đang lập kế hoạch',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'Về tôi',
+      bio: 'Tôi là Debbie — tập trung vào trực quan tương tác và biểu đạt không gian, khiến thông tin phức tạp trở nên nhìn thấy, cảm nhận và dùng được.',
+      desc: 'Đây là hub tác phẩm: công cụ trực quan môn học, thử nghiệm engine 3D, và áp dụng vào khí tượng, bảo tàng… Luôn cập nhật.',
+      craftTitle: 'Cách tôi làm',
+      craft: {
+        vue: {
+          label: 'Frontend & tương tác',
+          desc: 'Xây UI trực quan thao tác được và chuyển động với Vue cùng công nghệ liên quan.',
+        },
+        gis: {
+          label: 'GIS & dữ liệu không gian',
+          desc: 'Xử lý bản đồ, lớp và dữ liệu thời-không gian để kể chuyện không gian dễ đọc.',
+        },
+        engine: {
+          label: 'Trực quan 3D',
+          desc: 'Từ cảnh quy mô trái đất đến mô hình nội thất chi tiết — chọn engine 3D và phương án trực quan phù hợp theo hình thái dữ liệu và nhu cầu tương tác.',
+        },
+        viz: {
+          label: 'Kể chuyện thị giác',
+          desc: 'Biến ý tưởng trừu tượng thành ngôn ngữ đồ họa phục vụ học tập và quyết định.',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'Digital Twin', 'GIS', 'Trực quan 3D', 'Thiết kế tương tác'],
+    },
+    contact: {
+      label: 'Liên hệ',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'Email',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'Giao diện',
+      dark: 'Tối',
+      light: 'Sáng',
+      campus: 'Khuôn viên',
+      children: 'Trẻ em',
+      tech: 'Công nghệ',
+    },
+    lang: langLabels,
+  },
+  ms: {
+    nav: {
+      home: 'Laman utama',
+      focus: 'Fokus',
+      featured: 'Pilihan',
+      tools: 'Alat subjek',
+      spatial: 'Demo 3D',
+      scenarios: 'Senario',
+      about: 'Tentang',
+    },
+    hero: {
+      role: 'Pembangunan visualisasi · Nombor & ruang',
+      title: 'Debbie',
+      subtitle:
+        'Saya membina visualisasi interaktif — menukar konsep matematik, idea geospatial dan data perniagaan menjadi grafik serta adegan 3D yang boleh dilihat, diteroka dan difahami.',
+      start: 'Lihat karya',
+      about: 'Tentang saya',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'Tiga benang merentasi karya saya',
+      desc: 'Bukan sekadar senarai pautan — eksperimen berterusan sekitar pemahaman, penyampaian dan penghantaran dunia nyata.',
+      items: {
+        tools: {
+          title: 'Visualisasi subjek',
+          desc: 'Bina intuisi dengan grafik yang boleh dimanipulasi.',
+          keywords: ['Matematik', 'Geografi', 'Fizik'],
+        },
+        spatial: {
+          title: 'Ekspresi ruang 3D',
+          desc: 'Teroka 3D dunia nyata dengan Cesium, ArcGIS dan Three.js.',
+          keywords: ['Adegan bumi', 'Model bandar', 'Masa nyata'],
+        },
+        scenarios: {
+          title: 'Senario gunaan',
+          desc: 'Bawa visualisasi ke analisis cuaca, paparan muzium dan lagi.',
+          keywords: ['Cuaca', 'Muzium', 'Produk'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'Karya pilihan',
+      desc: 'Mulakan dengan sorotan, kemudian selami setiap kategori.',
+      prev: 'Sebelum',
+      next: 'Seterusnya',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'Gerakkan tetikus untuk berinteraksi',
+    },
+    categories: {
+      tools: {
+        label: 'Alat subjek',
+        chapter: 'Bahagian 01',
+        title: 'Visualisasi subjek',
+        desc: 'Alat interaktif untuk matematik, geografi dan fizik — membina intuisi melalui grafik.',
+      },
+      spatial: {
+        label: 'Demo 3D',
+        chapter: 'Bahagian 02',
+        title: 'Demo visualisasi 3D',
+        desc: 'Eksperimen adegan 3D dengan Cesium, ArcGIS dan Three.js — data ruang dan rendering masa nyata.',
+      },
+      scenarios: {
+        label: 'Senario',
+        chapter: 'Bahagian 03',
+        title: 'Senario gunaan',
+        desc: 'Aplikasi visualisasi dunia nyata, dari analisis cuaca hingga koleksi muzium.',
+      },
+    },
+    items: {
+      math: {
+        title: 'Visualisasi matematik',
+        desc: 'Grafik interaktif untuk fungsi, geometri dan kalkulus langsung.',
+        cta: 'Buka visualisasi matematik',
+        tags: ['Graf fungsi', 'Geometri', 'Kalkulus langsung'],
+      },
+      geography: {
+        title: 'Visualisasi geografi',
+        desc: 'Paparan interaktif corak ruang dan proses geografi — akan datang.',
+        cta: 'Akan datang',
+        tags: ['Analisis ruang', 'Naratif peta', 'Proses wilayah'],
+      },
+      physics: {
+        title: 'Visualisasi fizik',
+        desc: 'Demo dinamik untuk mekanik, gelombang dan medan — dirancang.',
+        cta: 'Akan datang',
+        tags: ['Simulasi mekanik', 'Gangguan gelombang', 'Garis medan'],
+      },
+      weather: {
+        title: 'Visualisasi cuaca',
+        desc: 'Data cuaca ruang — lapisan, perubahan temporal dan paparan analisis.',
+        cta: 'Buka visualisasi cuaca',
+        tags: ['Lapisan cuaca', 'Perubahan temporal', 'Analisis'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'Demo visualisasi 3D skala bumi dikuasakan oleh Cesium.',
+        cta: 'Akan datang',
+        tags: ['Topografi global', 'Spatiotemporal', 'Imej serong'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: 'Adegan 3D dan demo analisis GIS dengan ArcGIS.',
+        cta: 'Akan datang',
+        tags: ['Lapisan adegan', 'Model bandar', 'Analisis ruang'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Rendering 3D interaktif dan visual kreatif dengan Three.js.',
+        cta: 'Akan datang',
+        tags: ['Render masa nyata', 'Bahan', 'Adegan interaktif'],
+      },
+      museum: {
+        title: 'Koleksi muzium',
+        desc: 'Penyemakan digital dan paparan naratif untuk koleksi muzium — dalam perancangan.',
+        cta: 'Akan datang',
+        tags: ['Koleksi', 'Naratif digital', 'Paparan immersif'],
+      },
+    },
+    status: {
+      live: 'Langsung',
+      soon: 'Dirancang',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'Tentang saya',
+      bio: 'Saya Debbie — fokus pada visualisasi interaktif dan ekspresi ruang, menjadikan maklumat kompleks kelihatan, ketara dan berguna.',
+      desc: 'Ini adalah hab karya saya: alat visualisasi subjek, eksperimen enjin 3D, dan senario gunaan seperti cuaca dan paparan muzium. Sentiasa berkembang.',
+      craftTitle: 'Cara saya bekerja',
+      craft: {
+        vue: {
+          label: 'Frontend & interaksi',
+          desc: 'Bina UI visualisasi yang boleh dikendalikan dan gerakan dengan Vue serta teknologi berkaitan.',
+        },
+        gis: {
+          label: 'GIS & data ruang',
+          desc: 'Kerja dengan peta, lapisan dan data spatiotemporal untuk penceritaan ruang.',
+        },
+        engine: {
+          label: 'Visualisasi 3D',
+          desc: 'Dari adegan skala bumi hingga model dalaman terperinci — memilih enjin 3D dan pendekatan visualisasi mengikut bentuk data dan keperluan interaksi.',
+        },
+        viz: {
+          label: 'Naratif visual',
+          desc: 'Tukar idea abstrak kepada bahasa grafik untuk pembelajaran dan keputusan.',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'Digital Twin', 'GIS', 'Visualisasi 3D', 'Reka Bentuk Interaksi'],
+    },
+    contact: {
+      label: 'Hubungi',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'E-mel',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'Tema',
+      dark: 'Gelap',
+      light: 'Cerah',
+      campus: 'Kampus',
+      children: 'Kanak-kanak',
+      tech: 'Teknologi',
+    },
+    lang: langLabels,
+  },
+  fr: {
+    nav: {
+      home: 'Accueil',
+      focus: 'Axes',
+      featured: 'Sélection',
+      tools: 'Outils disciplinaires',
+      spatial: 'Démos 3D',
+      scenarios: 'Scénarios',
+      about: 'À propos',
+    },
+    hero: {
+      role: 'Visualisation · Maths & espace',
+      title: 'Debbie',
+      subtitle:
+        'Je crée des visualisations interactives — transformer les concepts mathématiques, les idées géospatiales et les données métier en graphiques et scènes 3D à voir, explorer et comprendre.',
+      start: 'Parcourir les œuvres',
+      about: 'À propos de moi',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'Trois fils conducteurs',
+      desc: 'Pas une simple liste de liens — des expérimentations continues autour de la compréhension, de la présentation et de la mise en production.',
+      items: {
+        tools: {
+          title: 'Visualisation disciplinaire',
+          desc: 'Construire l’intuition avec des graphiques manipulables.',
+          keywords: ['Maths', 'Géographie', 'Physique'],
+        },
+        spatial: {
+          title: 'Expression spatiale 3D',
+          desc: 'Explorer le monde réel en 3D avec Cesium, ArcGIS et Three.js.',
+          keywords: ['Scènes globe', 'Modèles urbains', 'Temps réel'],
+        },
+        scenarios: {
+          title: 'Scénarios appliqués',
+          desc: 'Amener la visualisation vers l’analyse météo, les expositions muséales, etc.',
+          keywords: ['Météo', 'Musée', 'Produits'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'Œuvres sélectionnées',
+      desc: 'Commencez par les temps forts, puis explorez chaque catégorie.',
+      prev: 'Précédent',
+      next: 'Suivant',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'Bougez pour interagir',
+    },
+    categories: {
+      tools: {
+        label: 'Outils disciplinaires',
+        chapter: 'Section 01',
+        title: 'Visualisation disciplinaire',
+        desc: 'Outils interactifs pour les maths, la géographie et la physique — bâtir l’intuition par le graphique.',
+      },
+      spatial: {
+        label: 'Démos 3D',
+        chapter: 'Section 02',
+        title: 'Démos de visualisation 3D',
+        desc: 'Expériences de scènes 3D avec Cesium, ArcGIS et Three.js — données spatiales et rendu temps réel.',
+      },
+      scenarios: {
+        label: 'Scénarios',
+        chapter: 'Section 03',
+        title: 'Scénarios appliqués',
+        desc: 'Applications de visualisation du monde réel, de l’analyse météo aux collections muséales.',
+      },
+    },
+    items: {
+      math: {
+        title: 'Visualisation mathématique',
+        desc: 'Graphiques interactifs pour fonctions, géométrie et calcul dynamique.',
+        cta: 'Ouvrir la visualisation maths',
+        tags: ['Courbes', 'Géométrie', 'Calcul dynamique'],
+      },
+      geography: {
+        title: 'Visualisation géographique',
+        desc: 'Vues interactives des motifs spatiaux et processus géographiques — bientôt.',
+        cta: 'Bientôt',
+        tags: ['Analyse spatiale', 'Récit cartographique', 'Processus régional'],
+      },
+      physics: {
+        title: 'Visualisation physique',
+        desc: 'Démos dynamiques pour mécanique, ondes et champs — prévu.',
+        cta: 'Bientôt',
+        tags: ['Mécanique', 'Interférence', 'Lignes de champ'],
+      },
+      weather: {
+        title: 'Visualisation météo',
+        desc: 'Données météo spatiales — couches, évolution temporelle et vues d’analyse.',
+        cta: 'Ouvrir la visualisation météo',
+        tags: ['Couches météo', 'Évolution temporelle', 'Analyse'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'Démos de visualisation 3D à l’échelle terrestre avec Cesium.',
+        cta: 'Bientôt',
+        tags: ['Relief mondial', 'Spatiotemporel', 'Imagerie oblique'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: 'Scènes 3D et démos d’analyse SIG avec ArcGIS.',
+        cta: 'Bientôt',
+        tags: ['Couches de scène', 'Modèles urbains', 'Analyse spatiale'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Rendu 3D interactif et visuels créatifs avec Three.js.',
+        cta: 'Bientôt',
+        tags: ['Rendu temps réel', 'Matériaux', 'Scènes interactives'],
+      },
+      museum: {
+        title: 'Collections muséales',
+        desc: 'Consultation numérique et exposition narrative des collections — en planification.',
+        cta: 'Bientôt',
+        tags: ['Collections', 'Récit numérique', 'Exposition immersive'],
+      },
+    },
+    status: {
+      live: 'En ligne',
+      soon: 'Prévu',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'À propos de moi',
+      bio: 'Je suis Debbie — spécialisée dans la visualisation interactive et l’expression spatiale, pour rendre l’information complexe visible, tangible et utile.',
+      desc: 'Voici mon hub de travaux : outils disciplinaires, expériences de moteurs 3D, et scénarios appliqués comme la météo et les musées. Toujours en évolution.',
+      craftTitle: 'Ma façon de travailler',
+      craft: {
+        vue: {
+          label: 'Frontend & interaction',
+          desc: 'Construire des interfaces de visualisation opérables et du mouvement avec Vue.',
+        },
+        gis: {
+          label: 'SIG & données spatiales',
+          desc: 'Travailler avec cartes, couches et données spatiotemporelles pour raconter l’espace.',
+        },
+        engine: {
+          label: 'Visualisation 3D',
+          desc: "Des scènes à l'échelle du globe aux modèles intérieurs détaillés — choisir le moteur 3D et l'approche de visualisation selon la forme des données et les besoins d'interaction.",
+        },
+        viz: {
+          label: 'Récit visuel',
+          desc: 'Transformer des idées abstraites en langage graphique pour apprendre et décider.',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'Jumeau numérique', 'GIS', 'Visualisation 3D', "Design d'interaction"],
+    },
+    contact: {
+      label: 'Contact',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'E-mail',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'Thème',
+      dark: 'Sombre',
+      light: 'Clair',
+      campus: 'Campus',
+      children: 'Enfants',
+      tech: 'Tech',
+    },
+    lang: langLabels,
+  },
+  de: {
+    nav: {
+      home: 'Start',
+      focus: 'Fokus',
+      featured: 'Auswahl',
+      tools: 'Fach-Tools',
+      spatial: '3D-Demos',
+      scenarios: 'Szenarien',
+      about: 'Über mich',
+    },
+    hero: {
+      role: 'Visualisierung · Mathematik & Raum',
+      title: 'Debbie',
+      subtitle:
+        'Ich baue interaktive Visualisierungen — Mathematik, Geospatial-Ideen und Geschäftsdaten werden zu Grafiken und 3D-Szenen, die man sehen, erkunden und verstehen kann.',
+      start: 'Werke ansehen',
+      about: 'Über mich',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'Drei Leitlinien durch meine Arbeit',
+      desc: 'Keine bloße Linkliste — laufende Experimente rund um Verstehen, Darstellen und reale Umsetzung.',
+      items: {
+        tools: {
+          title: 'Fachvisualisierung',
+          desc: 'Intuition mit manipulierbaren Grafiken aufbauen.',
+          keywords: ['Mathe', 'Geografie', 'Physik'],
+        },
+        spatial: {
+          title: '3D-Raumausdruck',
+          desc: 'Reale 3D-Welten mit Cesium, ArcGIS und Three.js erkunden.',
+          keywords: ['Globusszenen', 'Stadtmodelle', 'Echtzeit'],
+        },
+        scenarios: {
+          title: 'Angewandte Szenarien',
+          desc: 'Visualisierung in Wetteranalyse, Museumsdisplays und mehr bringen.',
+          keywords: ['Wetter', 'Museum', 'Produkte'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'Ausgewählte Werke',
+      desc: 'Mit Highlights starten, dann in jede Kategorie eintauchen.',
+      prev: 'Zurück',
+      next: 'Weiter',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'Bewegen zum Interagieren',
+    },
+    categories: {
+      tools: {
+        label: 'Fach-Tools',
+        chapter: 'Abschnitt 01',
+        title: 'Fachvisualisierung',
+        desc: 'Interaktive Tools für Mathe, Geografie und Physik — Intuition durch Grafik.',
+      },
+      spatial: {
+        label: '3D-Demos',
+        chapter: 'Abschnitt 02',
+        title: '3D-Visualisierungsdemos',
+        desc: 'Experimente mit Cesium, ArcGIS und Three.js — räumliche Daten und Echtzeit-Rendering.',
+      },
+      scenarios: {
+        label: 'Szenarien',
+        chapter: 'Abschnitt 03',
+        title: 'Angewandte Szenarien',
+        desc: 'Visualisierungsanwendungen aus der Praxis — von Wetteranalyse bis Museumssammlungen.',
+      },
+    },
+    items: {
+      math: {
+        title: 'Mathe-Visualisierung',
+        desc: 'Interaktive Grafiken für Funktionen, Geometrie und live Rechnen.',
+        cta: 'Mathe-Visualisierung öffnen',
+        tags: ['Funktionsgraphen', 'Geometrie', 'Live-Rechnung'],
+      },
+      geography: {
+        title: 'Geografie-Visualisierung',
+        desc: 'Interaktive Ansichten räumlicher Muster und geografischer Prozesse — demnächst.',
+        cta: 'Demnächst',
+        tags: ['Raumanalyse', 'Kartenerzählung', 'Regionalprozess'],
+      },
+      physics: {
+        title: 'Physik-Visualisierung',
+        desc: 'Dynamische Demos zu Mechanik, Wellen und Feldern — geplant.',
+        cta: 'Demnächst',
+        tags: ['Mechanik', 'Welleninterferenz', 'Feldlinien'],
+      },
+      weather: {
+        title: 'Wetter-Visualisierung',
+        desc: 'Räumliche Wetterdaten — Layer, zeitliche Veränderung und Analyseansichten.',
+        cta: 'Wetter-Visualisierung öffnen',
+        tags: ['Wetterlayer', 'Zeitliche Veränderung', 'Analyse'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: '3D-Visualisierungsdemos im Erdmaßstab mit Cesium.',
+        cta: 'Demnächst',
+        tags: ['Globales Terrain', 'Spatiotemporal', 'Schrägbild'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: '3D-Szenen und GIS-Analysedemos mit ArcGIS.',
+        cta: 'Demnächst',
+        tags: ['Szenenlayer', 'Stadtmodelle', 'Raumanalyse'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Interaktives 3D-Rendering und kreative Visuals mit Three.js.',
+        cta: 'Demnächst',
+        tags: ['Echtzeit-Render', 'Materialien', 'Interaktive Szenen'],
+      },
+      museum: {
+        title: 'Museumssammlungen',
+        desc: 'Digitales Browsen und narrative Ausstellung von Sammlungen — in Planung.',
+        cta: 'Demnächst',
+        tags: ['Sammlungen', 'Digitale Erzählung', 'Immersive Display'],
+      },
+    },
+    status: {
+      live: 'Live',
+      soon: 'Geplant',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'Über mich',
+      bio: 'Ich bin Debbie — fokussiert auf interaktive Visualisierung und räumlichen Ausdruck, damit komplexe Information sichtbar, spürbar und nutzbar wird.',
+      desc: 'Das ist mein Werk-Hub: Fachvisualisierungs-Tools, 3D-Engine-Experimente und angewandte Szenarien wie Wetter und Museum. Stetig wachsend.',
+      craftTitle: 'So arbeite ich',
+      craft: {
+        vue: {
+          label: 'Frontend & Interaktion',
+          desc: 'Bedienbare Visualisierungs-UIs und Motion mit Vue und verwandter Technik bauen.',
+        },
+        gis: {
+          label: 'GIS & Raumdaten',
+          desc: 'Mit Karten, Layern und spatiotemporalen Daten räumliche Geschichten erzählen.',
+        },
+        engine: {
+          label: '3D-Visualisierung',
+          desc: 'Von globusskaligen Szenen bis zu detaillierten Innenraummodellen — passende 3D-Engine und Visualisierungsansatz je nach Datenform und Interaktionsbedarf.',
+        },
+        viz: {
+          label: 'Visuelle Erzählung',
+          desc: 'Abstrakte Ideen in Grafiksprache für Lernen und Entscheidungen verwandeln.',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'Digitaler Zwilling', 'GIS', '3D-Visualisierung', 'Interaktionsdesign'],
+    },
+    contact: {
+      label: 'Kontakt',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'E-Mail',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'Thema',
+      dark: 'Dunkel',
+      light: 'Hell',
+      campus: 'Campus',
+      children: 'Kinder',
+      tech: 'Tech',
+    },
+    lang: langLabels,
+  },
+  ru: {
+    nav: {
+      home: 'Главная',
+      focus: 'Направления',
+      featured: 'Избранное',
+      tools: 'Учебные инструменты',
+      spatial: '3D-демо',
+      scenarios: 'Сценарии',
+      about: 'Обо мне',
+    },
+    hero: {
+      role: 'Визуализация · Математика и пространство',
+      title: 'Debbie',
+      subtitle:
+        'Я создаю интерактивную визуализацию — превращаю математические идеи, геопространственные данные и бизнес-информацию в графику и 3D-сцены, которые можно видеть, исследовать и понимать.',
+      start: 'Смотреть работы',
+      about: 'Обо мне',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'Три линии, пронизывающие работы',
+      desc: 'Не просто список ссылок — постоянные эксперименты вокруг понимания, представления и реальной поставки.',
+      items: {
+        tools: {
+          title: 'Предметная визуализация',
+          desc: 'Строить интуицию через графику, которой можно управлять.',
+          keywords: ['Математика', 'География', 'Физика'],
+        },
+        spatial: {
+          title: '3D-пространственное выражение',
+          desc: 'Исследовать реальный мир в 3D с Cesium, ArcGIS и Three.js.',
+          keywords: ['Сцены Земли', 'Городские модели', 'Реальное время'],
+        },
+        scenarios: {
+          title: 'Прикладные сценарии',
+          desc: 'Внедрять визуализацию в анализ погоды, музейные экспозиции и другое.',
+          keywords: ['Погода', 'Музей', 'Продукты'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'Избранные работы',
+      desc: 'Сначала ключевые проекты, затем погружение по категориям.',
+      prev: 'Назад',
+      next: 'Далее',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'Двигайте мышью для взаимодействия',
+    },
+    categories: {
+      tools: {
+        label: 'Учебные инструменты',
+        chapter: 'Раздел 01',
+        title: 'Предметная визуализация',
+        desc: 'Интерактивные инструменты для математики, географии и физики — интуиция через графику.',
+      },
+      spatial: {
+        label: '3D-демо',
+        chapter: 'Раздел 02',
+        title: 'Демо 3D-визуализации',
+        desc: 'Эксперименты со сценами на Cesium, ArcGIS и Three.js — пространственные данные и рендеринг в реальном времени.',
+      },
+      scenarios: {
+        label: 'Сценарии',
+        chapter: 'Раздел 03',
+        title: 'Прикладные сценарии',
+        desc: 'Визуализация для реальных задач: от анализа погоды до музейных коллекций.',
+      },
+    },
+    items: {
+      math: {
+        title: 'Математическая визуализация',
+        desc: 'Интерактивная графика для функций, геометрии и живых вычислений.',
+        cta: 'Открыть мат. визуализацию',
+        tags: ['Графики функций', 'Геометрия', 'Живые вычисления'],
+      },
+      geography: {
+        title: 'Географическая визуализация',
+        desc: 'Интерактивные виды пространственных паттернов и географических процессов — скоро.',
+        cta: 'Скоро',
+        tags: ['Пространственный анализ', 'Картонарратив', 'Региональный процесс'],
+      },
+      physics: {
+        title: 'Физическая визуализация',
+        desc: 'Динамические демо механики, волн и полей — в планах.',
+        cta: 'Скоро',
+        tags: ['Механика', 'Интерференция', 'Силовые линии'],
+      },
+      weather: {
+        title: 'Метеовизуализация',
+        desc: 'Пространственные метеоданные — слои, временные изменения и аналитические виды.',
+        cta: 'Открыть метеовизуализацию',
+        tags: ['Погодные слои', 'Временные изменения', 'Анализ'],
+      },
+      cesium: {
+        title: 'Cesium 3D',
+        desc: 'Демо 3D-визуализации планетарного масштаба на Cesium.',
+        cta: 'Скоро',
+        tags: ['Глобальный рельеф', 'Пространство-время', 'Наклонная съёмка'],
+      },
+      arcgis: {
+        title: 'ArcGIS 3D',
+        desc: '3D-сцены и демо GIS-анализа на ArcGIS.',
+        cta: 'Скоро',
+        tags: ['Слой сцены', 'Городские модели', 'Пространственный анализ'],
+      },
+      threejs: {
+        title: 'Three.js 3D',
+        desc: 'Интерактивный 3D-рендеринг и креативная визуализация на Three.js.',
+        cta: 'Скоро',
+        tags: ['Реалтайм-рендер', 'Материалы', 'Интерактивные сцены'],
+      },
+      museum: {
+        title: 'Музейные коллекции',
+        desc: 'Цифровой просмотр и нарративная экспозиция коллекций — в подготовке.',
+        cta: 'Скоро',
+        tags: ['Коллекции', 'Цифровой нарратив', 'Иммерсивный показ'],
+      },
+    },
+    status: {
+      live: 'Онлайн',
+      soon: 'В планах',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'Обо мне',
+      bio: 'Я Debbie — занимаюсь интерактивной визуализацией и пространственным выражением, делая сложную информацию видимой, ощутимой и полезной.',
+      desc: 'Это хаб моих работ: предметные инструменты, эксперименты с 3D-движками и прикладные сценарии вроде погоды и музеев. Постоянно растёт.',
+      craftTitle: 'Как я работаю',
+      craft: {
+        vue: {
+          label: 'Фронтенд и взаимодействие',
+          desc: 'Собираю управляемые визуализационные интерфейсы и анимацию на Vue.',
+        },
+        gis: {
+          label: 'GIS и пространственные данные',
+          desc: 'Работаю с картами, слоями и пространственно-временными данными для пространственных историй.',
+        },
+        engine: {
+          label: '3D-визуализация',
+          desc: 'От сцен масштаба планеты до детальных интерьерных моделей — выбор подходящего 3D-движка и визуального решения по форме данных и требованиям взаимодействия.',
+        },
+        viz: {
+          label: 'Визуальный нарратив',
+          desc: 'Превращаю абстрактные идеи в графический язык для обучения и решений.',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'Цифровой двойник', 'GIS', '3D-визуализация', 'Дизайн взаимодействия'],
+    },
+    contact: {
+      label: 'Контакты',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'Эл. почта',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'Тема',
+      dark: 'Тёмная',
+      light: 'Светлая',
+      campus: 'Кампус',
+      children: 'Детская',
+      tech: 'Техно',
+    },
+    lang: langLabels,
+  },
+  ar: {
+    nav: {
+      home: 'الرئيسية',
+      focus: 'الاتجاه',
+      featured: 'مختارات',
+      tools: 'أدوات المواد',
+      spatial: 'عروض ثلاثية الأبعاد',
+      scenarios: 'سيناريوهات',
+      about: 'عني',
+    },
+    hero: {
+      role: 'تطوير التصور · الرياضيات والفضاء',
+      title: 'Debbie',
+      subtitle:
+        'أبني تصورًا تفاعليًا — أحول مفاهيم الرياضيات والأفكار الجغرافية المكانية وبيانات الأعمال إلى رسوم ومشاهد ثلاثية الأبعاد يمكن رؤيتها واستكشافها وفهمها.',
+      start: 'تصفح الأعمال',
+      about: 'عني',
+    },
+    focus: {
+      eyebrow: 'What I build',
+      title: 'ثلاثة محاور عبر أعمالي',
+      desc: 'ليست مجرد قائمة روابط — تجارب مستمرة حول الفهم والعرض والتنفيذ في العالم الحقيقي.',
+      items: {
+        tools: {
+          title: 'تصور المواد',
+          desc: 'بناء الحدس عبر رسوم يمكن التفاعل معها.',
+          keywords: ['رياضيات', 'جغرافيا', 'فيزياء'],
+        },
+        spatial: {
+          title: 'تعبير فضائي ثلاثي الأبعاد',
+          desc: 'استكشاف العالم الحقيقي ثلاثي الأبعاد مع Cesium و ArcGIS و Three.js.',
+          keywords: ['مشاهد الكرة الأرضية', 'نماذج المدن', 'وقت حقيقي'],
+        },
+        scenarios: {
+          title: 'سيناريوهات تطبيقية',
+          desc: 'إيصال التصور إلى تحليل الطقس وعروض المتاحف وغيرها.',
+          keywords: ['طقس', 'متحف', 'منتجات'],
+        },
+      },
+    },
+    featured: {
+      eyebrow: 'Selected works',
+      title: 'أعمال مختارة',
+      desc: 'ابدأ باللمحات ثم تعمّق في كل فئة.',
+      prev: 'السابق',
+      next: 'التالي',
+    },
+    viz: {
+      live: 'Live Viz',
+      hint: 'حرّك للتفاعل',
+    },
+    categories: {
+      tools: {
+        label: 'أدوات المواد',
+        chapter: 'القسم 01',
+        title: 'تصور المواد',
+        desc: 'أدوات تفاعلية للرياضيات والجغرافيا والفيزياء — بناء الحدس عبر الرسوم.',
+      },
+      spatial: {
+        label: 'عروض ثلاثية الأبعاد',
+        chapter: 'القسم 02',
+        title: 'عروض التصور ثلاثي الأبعاد',
+        desc: 'تجارب مشاهد ثلاثية الأبعاد مع Cesium و ArcGIS و Three.js — بيانات مكانية وعرض فوري.',
+      },
+      scenarios: {
+        label: 'سيناريوهات',
+        chapter: 'القسم 03',
+        title: 'سيناريوهات تطبيقية',
+        desc: 'تطبيقات تصور للعالم الحقيقي، من تحليل الطقس إلى مجموعات المتاحف.',
+      },
+    },
+    items: {
+      math: {
+        title: 'تصور الرياضيات',
+        desc: 'رسوم تفاعلية للدوال والهندسة والحساب الحي.',
+        cta: 'فتح تصور الرياضيات',
+        tags: ['منحنيات الدوال', 'الهندسة', 'حساب حي'],
+      },
+      geography: {
+        title: 'تصور الجغرافيا',
+        desc: 'عروض تفاعلية للأنماط المكانية والعمليات الجغرافية — قريبًا.',
+        cta: 'قريبًا',
+        tags: ['تحليل مكاني', 'سرد خرائطي', 'عملية إقليمية'],
+      },
+      physics: {
+        title: 'تصور الفيزياء',
+        desc: 'عروض ديناميكية للميكانيكا والموجات والحقول — قيد التخطيط.',
+        cta: 'قريبًا',
+        tags: ['محاكاة ميكانيكية', 'تداخل الموجات', 'خطوط الحقل'],
+      },
+      weather: {
+        title: 'تصور الطقس',
+        desc: 'بيانات طقس مكانية — طبقات وتغيّر زمني ووجهات تحليل.',
+        cta: 'فتح تصور الطقس',
+        tags: ['طبقات الطقس', 'تغيّر زمني', 'تحليل'],
+      },
+      cesium: {
+        title: 'Cesium ثلاثي الأبعاد',
+        desc: 'عروض تصور ثلاثي الأبعاد بمقياس الأرض مدعومة بـ Cesium.',
+        cta: 'قريبًا',
+        tags: ['تضاريس عالمية', 'زماني مكاني', 'صور مائلة'],
+      },
+      arcgis: {
+        title: 'ArcGIS ثلاثي الأبعاد',
+        desc: 'مشاهد ثلاثية الأبعاد وعروض تحليل GIS مع ArcGIS.',
+        cta: 'قريبًا',
+        tags: ['طبقات المشهد', 'نماذج المدن', 'تحليل مكاني'],
+      },
+      threejs: {
+        title: 'Three.js ثلاثي الأبعاد',
+        desc: 'عرض ثلاثي الأبعاد تفاعلي وتصور إبداعي مع Three.js.',
+        cta: 'قريبًا',
+        tags: ['عرض فوري', 'مواد', 'مشاهد تفاعلية'],
+      },
+      museum: {
+        title: 'مجموعات المتاحف',
+        desc: 'تصفح رقمي وعرض سردي لمجموعات المتاحف — قيد الإعداد.',
+        cta: 'قريبًا',
+        tags: ['مجموعات', 'سرد رقمي', 'عرض غامر'],
+      },
+    },
+    status: {
+      live: 'متاح',
+      soon: 'مخطط',
+    },
+    about: {
+      eyebrow: 'About me',
+      title: 'عني',
+      bio: 'أنا Debbie — أركز على التصور التفاعلي والتعبير الفضائي، لأجعل المعلومات المعقدة مرئية وملموسة ومفيدة.',
+      desc: 'هذا مركز أعمالي: أدوات تصور المواد، وتجارب محركات ثلاثية الأبعاد، وسيناريوهات تطبيقية مثل الطقس والمتاحف. ينمو باستمرار.',
+      craftTitle: 'كيف أعمل',
+      craft: {
+        vue: {
+          label: 'الواجهة والتفاعل',
+          desc: 'بناء واجهات تصور قابلة للتشغيل وحركة باستخدام Vue والتقنيات ذات الصلة.',
+        },
+        gis: {
+          label: 'GIS والبيانات المكانية',
+          desc: 'العمل مع الخرائط والطبقات والبيانات الزمانية المكانية لسرد مكاني مقروء.',
+        },
+        engine: {
+          label: 'تصور ثلاثي الأبعاد',
+          desc: 'من مشاهد بمقياس الكرة الأرضية إلى نماذج داخلية دقيقة — اختيار محرك ثلاثي الأبعاد ونهج التصور المناسب حسب شكل البيانات واحتياجات التفاعل.',
+        },
+        viz: {
+          label: 'السرد البصري',
+          desc: 'تحويل الأفكار المجردة إلى لغة رسومية للتعلم واتخاذ القرار.',
+        },
+      },
+      stack: ['Vue', 'WebGL', 'التوأم الرقمي', 'GIS', 'تصور ثلاثي الأبعاد', 'تصميم التفاعل'],
+    },
+    contact: {
+      label: 'تواصل',
+      name: 'Debbie',
+      qq: 'QQ',
+      email: 'البريد',
+      douyin: 'Douyin',
+    },
+    theme: {
+      label: 'المظهر',
+      dark: 'داكن',
+      light: 'فاتح',
+      campus: 'حرم جامعي',
+      children: 'أطفال',
+      tech: 'تقني',
+    },
+    lang: langLabels,
   },
 }
+       

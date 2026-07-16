@@ -6,6 +6,9 @@ import './styles/main.css'
 
 const savedLocale = localStorage.getItem('locale') || 'zh'
 
+document.documentElement.dir = savedLocale === 'ar' ? 'rtl' : 'ltr'
+document.documentElement.lang = savedLocale
+
 const i18n = createI18n({
   legacy: false,
   locale: savedLocale,
