@@ -13,6 +13,15 @@ npm run dev
 
 ```bash
 npm run build
+# 下次构建
+# 1. 改 src/ 里的代码
+# 2. 重新构建
+npm run build
+
+# 3. 提交并推送（源码 + 新的 docs/ 一起推）
+git add .
+git commit -m "update site"
+git push
 ```
 
 本项目构建输出目录是 **`docs/`**（作用等同于常见的 `dist/`）。  
