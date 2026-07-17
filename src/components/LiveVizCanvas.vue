@@ -300,7 +300,7 @@ function draw(time) {
   if (mode === 'weather') {
     drawWave(ctx, time)
     drawBars(ctx, time)
-  } else if (mode === 'cesium') {
+  } else if (mode === 'cesium' || mode === 'arcgis') {
     drawGlobe(ctx, time)
     drawNetwork(ctx)
   } else if (mode === 'museum') {

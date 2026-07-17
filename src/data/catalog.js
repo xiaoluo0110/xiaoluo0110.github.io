@@ -52,8 +52,8 @@ export const ITEMS = {
   },
   arcgis: {
     category: 'spatial',
-    status: 'soon',
-    url: null,
+    status: 'live',
+    url: 'https://xiaoluo0110.github.io/ArcGIS-3D-visualization/',
     accent: '#f5c26b',
     icon: 'M3 19l6-6 4 3 8-9M14 7h5v5',
   },

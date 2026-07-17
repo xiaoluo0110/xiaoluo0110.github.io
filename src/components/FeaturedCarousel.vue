@@ -6,7 +6,7 @@ import { ITEMS } from '../data/catalog'
 import { useMouse } from '../composables/useMouse'
 import { useTheme } from '../composables/useTheme'
 
-const SLIDE_IDS = ['math', 'weather', 'cesium', 'museum']
+const SLIDE_IDS = ['math', 'weather', 'arcgis', 'museum']
 
 const { t } = useI18n()
 const mouse = useMouse()

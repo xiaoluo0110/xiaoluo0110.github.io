@@ -20,7 +20,7 @@ export const messages = {
       focus: '方向',
       featured: '精选',
       tools: '学科工具',
-      spatial: '三维演示',
+      spatial: '三维示例',
       scenarios: '应用场景',
       about: '关于',
     },
@@ -73,9 +73,9 @@ export const messages = {
         desc: '面向数学、地理与物理的交互式可视化工具，用图形建立直觉。',
       },
       spatial: {
-        label: '三维演示',
+        label: '三维示例',
         chapter: '板块 02',
-        title: '三维可视化 Demo',
+        title: '三维可视化示例',
         desc: '基于 Cesium、ArcGIS 与 Three.js 的三维场景实验，探索空间数据与实时渲染。',
       },
       scenarios: {
@@ -119,7 +119,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 三维',
         desc: '基于 ArcGIS 的三维场景与 GIS 分析演示。',
-        cta: '即将开放',
+        cta: '进入 ArcGIS 三维',
         tags: ['场景图层', '城市模型', '空间分析'],
       },
       threejs: {
@@ -188,7 +188,7 @@ export const messages = {
       focus: '方向',
       featured: '精選',
       tools: '學科工具',
-      spatial: '三維演示',
+      spatial: '三維示例',
       scenarios: '應用場景',
       about: '關於',
     },
@@ -241,9 +241,9 @@ export const messages = {
         desc: '面向數學、地理與物理的互動式視覺化工具，用圖形建立直覺。',
       },
       spatial: {
-        label: '三維演示',
+        label: '三維示例',
         chapter: '板塊 02',
-        title: '三維視覺化 Demo',
+        title: '三維視覺化示例',
         desc: '基於 Cesium、ArcGIS 與 Three.js 的三維場景實驗，探索空間資料與即時渲染。',
       },
       scenarios: {
@@ -287,7 +287,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 三維',
         desc: '基於 ArcGIS 的三維場景與 GIS 分析演示。',
-        cta: '即將開放',
+        cta: '進入 ArcGIS 三維',
         tags: ['場景圖層', '城市模型', '空間分析'],
       },
       threejs: {
@@ -356,7 +356,7 @@ export const messages = {
       focus: 'Focus',
       featured: 'Featured',
       tools: 'Subject Tools',
-      spatial: '3D Demos',
+      spatial: '3D Examples',
       scenarios: 'Scenarios',
       about: 'About',
     },
@@ -409,9 +409,9 @@ export const messages = {
         desc: 'Interactive tools for math, geography, and physics — building intuition through graphics.',
       },
       spatial: {
-        label: '3D Demos',
+        label: '3D Examples',
         chapter: 'Section 02',
-        title: '3D Visualization Demos',
+        title: '3D Visualization Examples',
         desc: 'Experiments with Cesium, ArcGIS, and Three.js — spatial data and real-time rendering.',
       },
       scenarios: {
@@ -455,7 +455,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: '3D scenes and GIS analysis demos with ArcGIS.',
-        cta: 'Coming Soon',
+        cta: 'Open ArcGIS 3D',
         tags: ['Scene Layers', 'City Models', 'Spatial Analysis'],
       },
       threejs: {
@@ -623,7 +623,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: 'ArcGIS による3DシーンとGIS分析デモ。',
-        cta: '近日公開',
+        cta: 'ArcGIS 3D を開く',
         tags: ['シーンレイヤー', '都市モデル', '空間分析'],
       },
       threejs: {
@@ -791,7 +791,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: 'ArcGIS 기반 3D 장면과 GIS 분석 데모.',
-        cta: '곧 공개',
+        cta: 'ArcGIS 3D 열기',
         tags: ['장면 레이어', '도시 모델', '공간 분석'],
       },
       threejs: {
@@ -959,7 +959,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: 'ฉาก 3D และการวิเคราะห์ GIS ด้วย ArcGIS',
-        cta: 'เร็วๆ นี้',
+        cta: 'เปิด ArcGIS 3D',
         tags: ['เลเยอร์ฉาก', 'โมเดลเมือง', 'วิเคราะห์เชิงพื้นที่'],
       },
       threejs: {
@@ -1127,7 +1127,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: 'Cảnh 3D và demo phân tích GIS với ArcGIS.',
-        cta: 'Sắp mở',
+        cta: 'Mở ArcGIS 3D',
         tags: ['Lớp cảnh', 'Mô hình đô thị', 'Phân tích không gian'],
       },
       threejs: {
@@ -1295,7 +1295,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: 'Adegan 3D dan demo analisis GIS dengan ArcGIS.',
-        cta: 'Akan datang',
+        cta: 'Buka ArcGIS 3D',
         tags: ['Lapisan adegan', 'Model bandar', 'Analisis ruang'],
       },
       threejs: {
@@ -1463,7 +1463,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: 'Scènes 3D et démos d’analyse SIG avec ArcGIS.',
-        cta: 'Bientôt',
+        cta: 'Ouvrir ArcGIS 3D',
         tags: ['Couches de scène', 'Modèles urbains', 'Analyse spatiale'],
       },
       threejs: {
@@ -1631,7 +1631,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: '3D-Szenen und GIS-Analysedemos mit ArcGIS.',
-        cta: 'Demnächst',
+        cta: 'ArcGIS 3D öffnen',
         tags: ['Szenenlayer', 'Stadtmodelle', 'Raumanalyse'],
       },
       threejs: {
@@ -1799,7 +1799,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS 3D',
         desc: '3D-сцены и демо GIS-анализа на ArcGIS.',
-        cta: 'Скоро',
+        cta: 'Открыть ArcGIS 3D',
         tags: ['Слой сцены', 'Городские модели', 'Пространственный анализ'],
       },
       threejs: {
@@ -1967,7 +1967,7 @@ export const messages = {
       arcgis: {
         title: 'ArcGIS ثلاثي الأبعاد',
         desc: 'مشاهد ثلاثية الأبعاد وعروض تحليل GIS مع ArcGIS.',
-        cta: 'قريبًا',
+        cta: 'فتح ArcGIS 3D',
         tags: ['طبقات المشهد', 'نماذج المدن', 'تحليل مكاني'],
       },
       threejs: {
