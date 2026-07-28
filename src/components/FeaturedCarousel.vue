@@ -6,7 +6,8 @@ import { ITEMS } from '../data/catalog'
 import { useMouse } from '../composables/useMouse'
 import { useTheme } from '../composables/useTheme'
 
-const SLIDE_IDS = ['math', 'weather', 'arcgis', 'museum']
+/** 精选区只展示已上线作品，避免「规划中」稀释信息密度 */
+const SLIDE_IDS = ['math', 'geography', 'weather', 'arcgis']
 
 const { t } = useI18n()
 const mouse = useMouse()
@@ -91,7 +92,7 @@ onUnmounted(stopTimer)
         </div>
 
         <div class="copy">
-          <span class="badge">{{ current.statusLabel }}</span>
+          <span class="badge" :class="current.status">{{ current.statusLabel }}</span>
           <h3>{{ current.title }}</h3>
           <p>{{ current.desc }}</p>
 
@@ -201,8 +202,8 @@ onUnmounted(stopTimer)
   padding: 0.18rem 0.55rem;
   border-radius: 999px;
   font-size: 0.72rem;
-  background: var(--select-bg);
-  color: var(--text-muted);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent);
 }
 
 .copy h3 {

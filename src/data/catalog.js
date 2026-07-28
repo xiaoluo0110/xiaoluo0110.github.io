@@ -24,8 +24,8 @@ export const ITEMS = {
   },
   geography: {
     category: 'tools',
-    status: 'soon',
-    url: null,
+    status: 'live',
+    url: 'https://debbie-luo.github.io/geo-3d-learning/',
     accent: '#7d9cdb',
     icon: 'M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10zM12 8.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z',
   },

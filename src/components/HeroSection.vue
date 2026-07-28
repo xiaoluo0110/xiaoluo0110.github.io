@@ -13,6 +13,16 @@ const { theme } = useTheme()
 
 const focuses = ['tools', 'spatial', 'scenarios']
 
+const pillars = computed(() => {
+  const list = tm('hero.pillars')
+  return Array.isArray(list) ? list : []
+})
+
+const stack = computed(() => {
+  const list = tm('about.stack')
+  return Array.isArray(list) ? list : []
+})
+
 const brandShift = computed(() => ({
   transform: `translate3d(${mouse.px * 14}px, ${mouse.py * 10}px, 0)`,
 }))
@@ -28,6 +38,12 @@ const panelShift = computed(() => ({
       <p class="role">{{ t('hero.role') }}</p>
       <h1>{{ t('hero.title') }}</h1>
       <p class="subtitle">{{ t('hero.subtitle') }}</p>
+      <p class="position">{{ t('hero.position') }}</p>
+
+      <ul v-if="pillars.length" class="pillars" aria-label="focus">
+        <li v-for="item in pillars" :key="item">{{ item }}</li>
+      </ul>
+
       <div class="cta-row">
         <button type="button" class="pill" @click="emit('explore')">
           {{ t('hero.start') }}
@@ -36,6 +52,10 @@ const panelShift = computed(() => ({
           {{ t('hero.about') }}
         </button>
       </div>
+
+      <p v-if="stack.length" class="stack-row">
+        <span v-for="item in stack" :key="item" class="stack-chip">{{ item }}</span>
+      </p>
     </div>
 
     <div class="viz-stack" :style="panelShift">
@@ -43,7 +63,8 @@ const panelShift = computed(() => ({
         <LiveVizCanvas :theme="theme" mode="hero" />
         <div class="viz-caption">
           <span>{{ t('viz.live') }}</span>
-          <small>{{ t('viz.hint') }}</small>
+          <small>{{ t('viz.capability') }}</small>
+          <small class="hint">{{ t('viz.hint') }}</small>
         </div>
       </div>
 
@@ -83,7 +104,7 @@ const panelShift = computed(() => ({
 }
 
 .brand {
-  max-width: 34rem;
+  max-width: 36rem;
   transition: transform 0.15s ease-out;
   will-change: transform;
 }
@@ -108,14 +129,42 @@ const panelShift = computed(() => ({
   color: var(--text-muted);
   font-size: clamp(0.98rem, 1.8vw, 1.12rem);
   line-height: 1.65;
-  margin-bottom: 1.75rem;
+  margin-bottom: 0.65rem;
   max-width: 32rem;
+}
+
+.position {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 1.1rem;
+  max-width: 32rem;
+}
+
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0 0 1.35rem;
+  padding: 0;
+}
+
+.pillars li {
+  padding: 0.28rem 0.7rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
 }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-bottom: 1.15rem;
 }
 
 .pill-ghost {
@@ -127,6 +176,25 @@ const panelShift = computed(() => ({
 .pill-ghost:hover {
   background: var(--select-bg);
   border-color: var(--accent);
+}
+
+.stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  max-width: 34rem;
+}
+
+.stack-chip {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.stack-chip:not(:last-child)::after {
+  content: '/';
+  margin-inline-start: 0.55rem;
+  opacity: 0.45;
 }
 
 .viz-stack {
@@ -177,6 +245,10 @@ const panelShift = computed(() => ({
   font-size: 0.7rem;
 }
 
+.viz-caption .hint {
+  opacity: 0.8;
+}
+
 .panel {
   padding: 0.75rem 0.95rem 0.25rem;
   border: 1px solid var(--border-soft);
@@ -209,13 +281,13 @@ const panelShift = computed(() => ({
   border-top: 1px solid var(--border-soft);
   background: transparent;
   color: var(--text);
-  text-align: left;
+  text-align: start;
   cursor: pointer;
-  transition: padding-left 0.25s ease, background-color 0.25s ease;
+  transition: padding-inline-start 0.25s ease, background-color 0.25s ease;
 }
 
 .focus-item:hover {
-  padding-left: 0.4rem;
+  padding-inline-start: 0.4rem;
   background: linear-gradient(
     90deg,
     color-mix(in srgb, var(--accent) 10%, transparent),

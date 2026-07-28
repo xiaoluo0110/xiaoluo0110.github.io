@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useMouse } from '../composables/useMouse'
 
@@ -6,6 +7,16 @@ const { t, tm } = useI18n()
 const mouse = useMouse()
 
 const craft = ['vue', 'gis', 'engine', 'viz']
+
+const scenarios = computed(() => {
+  const list = tm('about.scenarios')
+  return Array.isArray(list) ? list : []
+})
+
+const contacts = [
+  { key: 'qq', value: '1211571826', href: null },
+  { key: 'email', value: '1211571826@qq.com', href: 'mailto:1211571826@qq.com' },
+]
 </script>
 
 <template>
@@ -18,6 +29,29 @@ const craft = ['vue', 'gis', 'engine', 'viz']
       <h2>{{ t('about.title') }}</h2>
       <p class="bio">{{ t('about.bio') }}</p>
       <p class="desc">{{ t('about.desc') }}</p>
+
+      <div v-if="scenarios.length" class="scenarios">
+        <p class="scenarios-title">{{ t('about.scenariosTitle') }}</p>
+        <ul>
+          <li v-for="item in scenarios" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-cta">{{ t('about.contactCta') }}</p>
+        <div class="contact-list">
+          <a
+            v-for="item in contacts"
+            :key="item.key"
+            class="contact-item"
+            :href="item.href || undefined"
+            @click="!item.href && $event.preventDefault()"
+          >
+            <span class="k">{{ t(`contact.${item.key}`) }}</span>
+            <span class="v">{{ item.value }}</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="craft">
@@ -83,6 +117,76 @@ const craft = ['vue', 'gis', 'engine', 'viz']
   line-height: 1.75;
   font-size: 1.02rem;
   max-width: 36rem;
+  margin-bottom: 1.5rem;
+}
+
+.scenarios {
+  margin-bottom: 1.75rem;
+}
+
+.scenarios-title {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.scenarios ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+}
+
+.scenarios li {
+  padding: 0.32rem 0.7rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  background: color-mix(in srgb, var(--bg) 50%, transparent);
+}
+
+.contact-block {
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border-soft);
+  max-width: 28rem;
+}
+
+.contact-cta {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  color: var(--text);
+}
+
+.contact-item .k {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.contact-item .v {
+  font-size: 0.92rem;
+}
+
+.contact-item[href]:hover .v {
+  color: var(--accent);
 }
 
 .craft h3 {

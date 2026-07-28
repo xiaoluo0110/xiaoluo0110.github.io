@@ -25,10 +25,12 @@ export const messages = {
       about: '关于',
     },
     hero: {
-      role: '可视化开发 · 数形与空间',
+      role: '数字孪生 · 空间可视化',
       title: '小叶罗',
       subtitle:
-        '我做交互式可视化：把数学概念、地理空间与业务数据，做成能看、能玩、能讲清楚的图形与三维场景。',
+        '服务于数字孪生行业，主攻可视化：把空间数据、业务逻辑与交互表达，做成能看、能玩、能讲清楚的图形与三维场景。',
+      position: '从学科可视化到三维场景，再到业务落地——围绕理解、呈现与交付持续实践。',
+      pillars: ['数字孪生', '空间可视化', '交互表达'],
       start: '浏览作品',
       about: '了解我',
     },
@@ -44,8 +46,8 @@ export const messages = {
         },
         spatial: {
           title: '三维空间表达',
-          desc: '用 Cesium / ArcGIS / Three.js 探索真实世界的三维呈现。',
-          keywords: ['地球场景', '城市模型', '实时渲染'],
+          desc: '面向数字孪生与空间场景，按需求选择合适的三维表达。',
+          keywords: ['数字孪生', '城市模型', '实时渲染'],
         },
         scenarios: {
           title: '应用场景落地',
@@ -57,13 +59,19 @@ export const messages = {
     featured: {
       eyebrow: 'Selected works',
       title: '精选作品',
-      desc: '先看代表性成果，再按分类深入探索。',
+      desc: '先看已上线的代表性成果，再按分类深入探索。',
       prev: '上一张',
       next: '下一张',
     },
     viz: {
       live: 'Live Viz',
       hint: '移动鼠标实时响应',
+      capability: '实时可视化能力演示',
+    },
+    catalog: {
+      highlights: '能力要点',
+      previewLive: '可进入完整演示',
+      previewSoon: '该方向正在筹备中',
     },
     categories: {
       tools: {
@@ -94,9 +102,9 @@ export const messages = {
       },
       geography: {
         title: '地理可视化',
-        desc: '空间格局与地理过程的交互呈现，即将上线。',
-        cta: '即将开放',
-        tags: ['空间分析', '地图叙事', '区域过程'],
+        desc: '灵动地理 —— 空间格局与地理过程的交互三维呈现。',
+        cta: '进入地理可视化',
+        tags: ['三维地理', '地图叙事', '空间过程'],
       },
       physics: {
         title: '物理可视化',
@@ -142,8 +150,10 @@ export const messages = {
     about: {
       eyebrow: 'About me',
       title: '关于我',
-      bio: '我是小叶罗，专注交互式可视化与空间表达——让复杂信息变得可见、可感、可用。',
-      desc: '这里是我的作品导航站：一边做学科可视化工具，一边试验三维引擎，一边把能力落到气象、文博等真实场景。这里持续更新。',
+      bio: '我是小叶罗，目前服务于数字孪生行业，主攻可视化方向——让复杂空间与业务信息变得可见、可感、可用。',
+      desc: '这里是我的作品导航站：学科可视化工具、三维场景实验，以及气象、文博等落地应用。内容会持续更新。',
+      scenariosTitle: '常做的场景',
+      scenarios: ['数字孪生场景表达', '气象与时空分析', '教学向学科可视化', '文博数字化展示'],
       craftTitle: '我怎么做',
       craft: {
         vue: {
@@ -164,6 +174,7 @@ export const messages = {
         },
       },
       stack: ['Vue', 'WebGL', '数字孪生', 'GIS', '三维可视化', '交互设计'],
+      contactCta: '欢迎交流合作',
     },
     contact: {
       label: '联系',
@@ -171,6 +182,7 @@ export const messages = {
       qq: 'QQ',
       email: '邮箱',
       douyin: '抖音',
+      twitter: 'X',
     },
     theme: {
       label: '主题',
@@ -193,10 +205,12 @@ export const messages = {
       about: '關於',
     },
     hero: {
-      role: '視覺化開發 · 數形與空間',
+      role: '數位孿生 · 空間視覺化',
       title: '小葉羅',
       subtitle:
-        '我做互動式視覺化：把數學概念、地理空間與業務資料，做成能看、能玩、能講清楚的圖形與三維場景。',
+        '服務於數位孿生行業，主攻視覺化：把空間資料、業務邏輯與互動表達，做成能看、能玩、能講清楚的圖形與三維場景。',
+      position: '從學科視覺化到三維場景，再到業務落地——圍繞理解、呈現與交付持續實踐。',
+      pillars: ['數位孿生', '空間視覺化', '互動表達'],
       start: '瀏覽作品',
       about: '了解我',
     },
@@ -212,8 +226,8 @@ export const messages = {
         },
         spatial: {
           title: '三維空間表達',
-          desc: '用 Cesium / ArcGIS / Three.js 探索真實世界的三維呈現。',
-          keywords: ['地球場景', '城市模型', '即時渲染'],
+          desc: '面向數位孿生與空間場景，依需求選擇合適的三維表達。',
+          keywords: ['數位孿生', '城市模型', '即時渲染'],
         },
         scenarios: {
           title: '應用場景落地',
@@ -225,13 +239,19 @@ export const messages = {
     featured: {
       eyebrow: 'Selected works',
       title: '精選作品',
-      desc: '先看代表性成果，再按分類深入探索。',
+      desc: '先看已上線的代表性成果，再按分類深入探索。',
       prev: '上一張',
       next: '下一張',
     },
     viz: {
       live: 'Live Viz',
       hint: '移動滑鼠即時回應',
+      capability: '即時視覺化能力演示',
+    },
+    catalog: {
+      highlights: '能力要點',
+      previewLive: '可進入完整演示',
+      previewSoon: '該方向正在籌備中',
     },
     categories: {
       tools: {
@@ -262,9 +282,9 @@ export const messages = {
       },
       geography: {
         title: '地理視覺化',
-        desc: '空間格局與地理過程的互動呈現，即將上線。',
-        cta: '即將開放',
-        tags: ['空間分析', '地圖敘事', '區域過程'],
+        desc: '靈動地理 —— 空間格局與地理過程的互動三維呈現。',
+        cta: '進入地理視覺化',
+        tags: ['三維地理', '地圖敘事', '空間過程'],
       },
       physics: {
         title: '物理視覺化',
@@ -310,8 +330,10 @@ export const messages = {
     about: {
       eyebrow: 'About me',
       title: '關於我',
-      bio: '我是小葉羅，專注互動式視覺化與空間表達——讓複雜資訊變得可見、可感、可用。',
-      desc: '這裡是我的作品導航站：一邊做學科視覺化工具，一邊試驗三維引擎，一邊把能力落到氣象、文博等真實場景。這裡持續更新。',
+      bio: '我是小葉羅，目前服務於數位孿生行業，主攻視覺化方向——讓複雜空間與業務資訊變得可見、可感、可用。',
+      desc: '這裡是我的作品導航站：學科視覺化工具、三維場景實驗，以及氣象、文博等落地應用。內容會持續更新。',
+      scenariosTitle: '常做的場景',
+      scenarios: ['數位孿生場景表達', '氣象與時空分析', '教學向學科視覺化', '文博數位化展示'],
       craftTitle: '我怎麼做',
       craft: {
         vue: {
@@ -332,6 +354,7 @@ export const messages = {
         },
       },
       stack: ['Vue', 'WebGL', '數位孿生', 'GIS', '三維視覺化', '互動設計'],
+      contactCta: '歡迎交流合作',
     },
     contact: {
       label: '聯繫',
@@ -339,6 +362,7 @@ export const messages = {
       qq: 'QQ',
       email: '信箱',
       douyin: '抖音',
+      twitter: 'X',
     },
     theme: {
       label: '主題',
@@ -361,10 +385,13 @@ export const messages = {
       about: 'About',
     },
     hero: {
-      role: 'Visualization · Math & Space',
+      role: 'Digital Twin · Spatial Visualization',
       title: 'Debbie',
       subtitle:
-        'I build interactive visualization — turning math, geospatial ideas, and business data into graphics and 3D scenes you can see, explore, and understand.',
+        'Working in digital twins with a focus on visualization — turning spatial data, business logic, and interaction into graphics and 3D scenes you can see, explore, and understand.',
+      position:
+        'From subject tools to 3D scenes to real delivery — practicing around understanding, presentation, and shipping.',
+      pillars: ['Digital Twin', 'Spatial Viz', 'Interaction'],
       start: 'Browse works',
       about: 'About me',
     },
@@ -380,8 +407,8 @@ export const messages = {
         },
         spatial: {
           title: '3D spatial expression',
-          desc: 'Explore real-world 3D with Cesium, ArcGIS, and Three.js.',
-          keywords: ['Globe scenes', 'City models', 'Realtime'],
+          desc: 'For digital twins and spatial scenes — choose the right 3D expression for the job.',
+          keywords: ['Digital Twin', 'City models', 'Realtime'],
         },
         scenarios: {
           title: 'Applied scenarios',
@@ -393,13 +420,19 @@ export const messages = {
     featured: {
       eyebrow: 'Selected works',
       title: 'Featured Works',
-      desc: 'Start with highlights, then dive into each category.',
+      desc: 'Start with live highlights, then dive into each category.',
       prev: 'Previous',
       next: 'Next',
     },
     viz: {
       live: 'Live Viz',
       hint: 'Move to interact',
+      capability: 'Live visualization capability',
+    },
+    catalog: {
+      highlights: 'Highlights',
+      previewLive: 'Open the full demo',
+      previewSoon: 'This direction is in progress',
     },
     categories: {
       tools: {
@@ -430,9 +463,9 @@ export const messages = {
       },
       geography: {
         title: 'Geography Visualization',
-        desc: 'Interactive views of spatial patterns and geographic processes — coming soon.',
-        cta: 'Coming Soon',
-        tags: ['Spatial Analysis', 'Map Narrative', 'Regional Process'],
+        desc: 'Lingdong Geography — interactive 3D views of spatial patterns and geographic processes.',
+        cta: 'Open Geography Visualization',
+        tags: ['3D Geography', 'Map Narrative', 'Spatial Process'],
       },
       physics: {
         title: 'Physics Visualization',
@@ -478,8 +511,15 @@ export const messages = {
     about: {
       eyebrow: 'About me',
       title: 'About me',
-      bio: 'I am Debbie — focused on interactive visualization and spatial expression, making complex information visible, tangible, and useful.',
-      desc: 'This is my work hub: subject visualization tools, 3D engine experiments, and applied scenarios like weather and museum displays. Always growing.',
+      bio: 'I am Debbie — working in digital twins with a focus on visualization, making complex spatial and business information visible, tangible, and useful.',
+      desc: 'This is my work hub: subject visualization tools, 3D scene experiments, and applied scenarios like weather and museum displays. Always growing.',
+      scenariosTitle: 'Where I often work',
+      scenarios: [
+        'Digital twin scenes',
+        'Weather & spatiotemporal analysis',
+        'Subject visualization for learning',
+        'Museum digital display',
+      ],
       craftTitle: 'How I work',
       craft: {
         vue: {
@@ -500,6 +540,7 @@ export const messages = {
         },
       },
       stack: ['Vue', 'WebGL', 'Digital Twin', 'GIS', '3D Visualization', 'Interaction Design'],
+      contactCta: 'Open to collaboration',
     },
     contact: {
       label: 'Contact',
@@ -507,6 +548,7 @@ export const messages = {
       qq: 'QQ',
       email: 'Email',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'Theme',
@@ -598,9 +640,9 @@ export const messages = {
       },
       geography: {
         title: '地理可視化',
-        desc: '空間パターンと地理過程のインタラクティブ表現 — 近日公開。',
-        cta: '近日公開',
-        tags: ['空間分析', '地図ナラティブ', '地域プロセス'],
+        desc: '霊動地理 —— 空間パターンと地理過程のインタラクティブな3D表現。',
+        cta: '地理可視化を開く',
+        tags: ['3D地理', '地図ナラティブ', '空間プロセス'],
       },
       physics: {
         title: '物理可視化',
@@ -675,6 +717,7 @@ export const messages = {
       qq: 'QQ',
       email: 'メール',
       douyin: '抖音',
+      twitter: 'X',
     },
     theme: {
       label: 'テーマ',
@@ -766,9 +809,9 @@ export const messages = {
       },
       geography: {
         title: '지리 시각화',
-        desc: '공간 패턴과 지리 과정의 인터랙티브 표현 — 곧 공개.',
-        cta: '곧 공개',
-        tags: ['공간 분석', '지도 서사', '지역 과정'],
+        desc: '영동 지리 —— 공간 패턴과 지리 과정의 인터랙티브 3D 표현.',
+        cta: '지리 시각화 열기',
+        tags: ['3D 지리', '지도 서사', '공간 과정'],
       },
       physics: {
         title: '물리 시각화',
@@ -843,6 +886,7 @@ export const messages = {
       qq: 'QQ',
       email: '이메일',
       douyin: '抖音',
+      twitter: 'X',
     },
     theme: {
       label: '테마',
@@ -934,9 +978,9 @@ export const messages = {
       },
       geography: {
         title: 'วิชวลไลเซชันภูมิศาสตร์',
-        desc: 'การแสดงรูปแบบเชิงพื้นที่และกระบวนการทางภูมิศาสตร์แบบโต้ตอบ — เร็วๆ นี้',
-        cta: 'เร็วๆ นี้',
-        tags: ['วิเคราะห์เชิงพื้นที่', 'เรื่องเล่าแผนที่', 'กระบวนการภูมิภาค'],
+        desc: 'Lingdong Geography — การแสดงรูปแบบเชิงพื้นที่และกระบวนการทางภูมิศาสตร์แบบ 3D โต้ตอบ',
+        cta: 'เปิดวิชวลไลเซชันภูมิศาสตร์',
+        tags: ['ภูมิศาสตร์ 3D', 'เรื่องเล่าแผนที่', 'กระบวนการเชิงพื้นที่'],
       },
       physics: {
         title: 'วิชวลไลเซชันฟิสิกส์',
@@ -1011,6 +1055,7 @@ export const messages = {
       qq: 'QQ',
       email: 'อีเมล',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'ธีม',
@@ -1102,9 +1147,9 @@ export const messages = {
       },
       geography: {
         title: 'Trực quan địa lý',
-        desc: 'Trình bày tương tác các mô hình không gian và quá trình địa lý — sắp ra mắt.',
-        cta: 'Sắp mở',
-        tags: ['Phân tích không gian', 'Kể chuyện bản đồ', 'Quá trình vùng'],
+        desc: 'Lingdong Geography — trình bày 3D tương tác các mô hình không gian và quá trình địa lý.',
+        cta: 'Mở trực quan địa lý',
+        tags: ['Địa lý 3D', 'Kể chuyện bản đồ', 'Quá trình không gian'],
       },
       physics: {
         title: 'Trực quan vật lý',
@@ -1179,6 +1224,7 @@ export const messages = {
       qq: 'QQ',
       email: 'Email',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'Giao diện',
@@ -1270,9 +1316,9 @@ export const messages = {
       },
       geography: {
         title: 'Visualisasi geografi',
-        desc: 'Paparan interaktif corak ruang dan proses geografi — akan datang.',
-        cta: 'Akan datang',
-        tags: ['Analisis ruang', 'Naratif peta', 'Proses wilayah'],
+        desc: 'Lingdong Geography — paparan 3D interaktif corak ruang dan proses geografi.',
+        cta: 'Buka visualisasi geografi',
+        tags: ['Geografi 3D', 'Naratif peta', 'Proses ruang'],
       },
       physics: {
         title: 'Visualisasi fizik',
@@ -1347,6 +1393,7 @@ export const messages = {
       qq: 'QQ',
       email: 'E-mel',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'Tema',
@@ -1438,9 +1485,9 @@ export const messages = {
       },
       geography: {
         title: 'Visualisation géographique',
-        desc: 'Vues interactives des motifs spatiaux et processus géographiques — bientôt.',
-        cta: 'Bientôt',
-        tags: ['Analyse spatiale', 'Récit cartographique', 'Processus régional'],
+        desc: 'Lingdong Geography — vues 3D interactives des motifs spatiaux et processus géographiques.',
+        cta: 'Ouvrir la visualisation géo',
+        tags: ['Géo 3D', 'Récit cartographique', 'Processus spatial'],
       },
       physics: {
         title: 'Visualisation physique',
@@ -1515,6 +1562,7 @@ export const messages = {
       qq: 'QQ',
       email: 'E-mail',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'Thème',
@@ -1606,9 +1654,9 @@ export const messages = {
       },
       geography: {
         title: 'Geografie-Visualisierung',
-        desc: 'Interaktive Ansichten räumlicher Muster und geografischer Prozesse — demnächst.',
-        cta: 'Demnächst',
-        tags: ['Raumanalyse', 'Kartenerzählung', 'Regionalprozess'],
+        desc: 'Lingdong Geography — interaktive 3D-Ansichten räumlicher Muster und geografischer Prozesse.',
+        cta: 'Geografie-Visualisierung öffnen',
+        tags: ['3D-Geografie', 'Kartenerzählung', 'Raumprozess'],
       },
       physics: {
         title: 'Physik-Visualisierung',
@@ -1683,6 +1731,7 @@ export const messages = {
       qq: 'QQ',
       email: 'E-Mail',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'Thema',
@@ -1774,9 +1823,9 @@ export const messages = {
       },
       geography: {
         title: 'Географическая визуализация',
-        desc: 'Интерактивные виды пространственных паттернов и географических процессов — скоро.',
-        cta: 'Скоро',
-        tags: ['Пространственный анализ', 'Картонарратив', 'Региональный процесс'],
+        desc: 'Lingdong Geography — интерактивные 3D-виды пространственных паттернов и географических процессов.',
+        cta: 'Открыть геовизуализацию',
+        tags: ['3D-география', 'Картонарратив', 'Пространственный процесс'],
       },
       physics: {
         title: 'Физическая визуализация',
@@ -1851,6 +1900,7 @@ export const messages = {
       qq: 'QQ',
       email: 'Эл. почта',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'Тема',
@@ -1942,9 +1992,9 @@ export const messages = {
       },
       geography: {
         title: 'تصور الجغرافيا',
-        desc: 'عروض تفاعلية للأنماط المكانية والعمليات الجغرافية — قريبًا.',
-        cta: 'قريبًا',
-        tags: ['تحليل مكاني', 'سرد خرائطي', 'عملية إقليمية'],
+        desc: 'Lingdong Geography — عروض ثلاثية الأبعاد تفاعلية للأنماط المكانية والعمليات الجغرافية.',
+        cta: 'فتح تصور الجغرافيا',
+        tags: ['جغرافيا ثلاثية الأبعاد', 'سرد خرائطي', 'عملية مكانية'],
       },
       physics: {
         title: 'تصور الفيزياء',
@@ -2019,6 +2069,7 @@ export const messages = {
       qq: 'QQ',
       email: 'البريد',
       douyin: 'Douyin',
+      twitter: 'Twitter',
     },
     theme: {
       label: 'المظهر',

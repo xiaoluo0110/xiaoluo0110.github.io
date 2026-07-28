@@ -49,6 +49,7 @@ const contacts = [
   { key: 'qq', value: '1211571826', href: null },
   { key: 'email', value: '1211571826@qq.com', href: 'mailto:1211571826@qq.com' },
   { key: 'douyin', value: '5173372329294', href: null },
+  { key: 'twitter', value: 'Debbie12115', href: 'https://x.com/Debbie12115' },
 ]
 
 const themeLabel = computed(() => t(`theme.${theme.value}`))
