@@ -10,7 +10,7 @@ export const CATEGORIES = [
   },
   {
     id: 'scenarios',
-    items: ['weather', 'museum'],
+    items: ['weather', 'trading', 'museum'],
   },
 ]
 
@@ -42,6 +42,13 @@ export const ITEMS = {
     url: 'http://117.72.77.155:18971/',
     accent: '#85c1e9',
     icon: 'M6 16h12M8 12h8M10 8h4M5 20h14',
+  },
+  trading: {
+    category: 'scenarios',
+    status: 'soon',
+    url: null,
+    accent: '#6bbf8a',
+    icon: 'M4 18V8M8 18V11M12 18V6M16 18v-7M20 18V9M3 18h18',
   },
   cesium: {
     category: 'spatial',

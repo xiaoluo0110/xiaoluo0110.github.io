@@ -17,138 +17,128 @@ const { theme } = useTheme()
 
 const categoryIds = CATEGORIES.map((c) => c.id)
 
-const itemIds = computed(() => {
-  const ids = getItemsByCategory(props.category)
+function sortItemIds(ids) {
   return [...ids].sort((a, b) => {
     const rank = (id) => (ITEMS[id].status === 'live' ? 0 : 1)
     return rank(a) - rank(b)
   })
-})
+}
 
-const meta = computed(() => ITEMS[props.item] ?? ITEMS.math)
+const itemIds = computed(() => sortItemIds(getItemsByCategory(props.category)))
 
-const isLive = computed(() => meta.value.status === 'live')
-
-const tags = computed(() => {
-  const list = tm(`items.${props.item}.tags`)
-  return Array.isArray(list) ? list : []
-})
-
-const vizMode = computed(() => {
-  const id = props.item
-  if (id === 'arcgis' || id === 'cesium' || id === 'threejs') return id === 'threejs' ? 'cesium' : id
-  if (id === 'geography') return 'cesium'
-  if (id === 'physics') return 'math'
-  return id
-})
+const cards = computed(() =>
+  itemIds.value.map((id) => {
+    const meta = ITEMS[id]
+    const tags = tm(`items.${id}.tags`)
+    return {
+      id,
+      ...meta,
+      title: t(`items.${id}.title`),
+      desc: t(`items.${id}.desc`),
+      cta: t(`items.${id}.cta`),
+      statusLabel: t(`status.${meta.status}`),
+      tags: Array.isArray(tags) ? tags : [],
+      vizMode: vizModeFor(id),
+    }
+  }),
+)
 
 watch(
   () => props.category,
   (cat) => {
-    const ids = getItemsByCategory(cat)
-    const sorted = [...ids].sort((a, b) => {
-      const rank = (id) => (ITEMS[id].status === 'live' ? 0 : 1)
-      return rank(a) - rank(b)
-    })
+    const sorted = sortItemIds(getItemsByCategory(cat))
     if (!sorted.includes(props.item)) {
       emit('update:item', sorted[0])
     }
   },
 )
 
+function vizModeFor(id) {
+  if (id === 'arcgis' || id === 'cesium') return id
+  if (id === 'threejs' || id === 'geography') return 'cesium'
+  if (id === 'physics') return 'math'
+  if (id === 'trading') return 'weather'
+  return id
+}
+
 function selectCategory(id) {
   emit('update:category', id)
 }
 
-function selectItem(id) {
+function onCardActivate(id) {
   emit('update:item', id)
 }
 </script>
 
 <template>
   <section id="catalog" class="catalog">
-    <div
-      class="cat-tabs"
-      role="tablist"
-      :style="{ transform: 'translate3d(calc(var(--mnx) * 4px), 0, 0)' }"
-    >
-      <button
-        v-for="id in categoryIds"
-        :key="id"
-        type="button"
-        role="tab"
-        class="cat-tab"
-        :class="{ active: category === id }"
-        :aria-selected="category === id"
-        @click="selectCategory(id)"
-      >
-        {{ t(`categories.${id}.label`) }}
-      </button>
-    </div>
-
-    <p class="cat-desc">{{ t(`categories.${category}.desc`) }}</p>
-
-    <div class="item-tabs" role="tablist">
-      <button
-        v-for="id in itemIds"
-        :key="id"
-        type="button"
-        role="tab"
-        class="item-tab"
-        :class="{ active: item === id, soon: ITEMS[id].status === 'soon' }"
-        :aria-selected="item === id"
-        @click="selectItem(id)"
-      >
-        {{ t(`items.${id}.title`) }}
-        <span class="badge" :class="ITEMS[id].status">{{ t(`status.${ITEMS[id].status}`) }}</span>
-      </button>
-    </div>
-
-    <div class="panel" :key="item" :style="{ '--accent': meta.accent }">
+    <div class="catalog-head">
       <div
-        class="copy"
-        :style="{
-          transform: 'translate3d(calc(var(--mnx) * 10px), calc(var(--mny) * 6px), 0)',
-        }"
+        class="cat-tabs"
+        role="tablist"
+        :style="{ transform: 'translate3d(calc(var(--mnx) * 4px), 0, 0)' }"
       >
-        <p class="chapter">{{ t(`categories.${category}.chapter`) }}</p>
-        <h2>{{ t(`items.${item}.title`) }}</h2>
-        <p class="desc">{{ t(`items.${item}.desc`) }}</p>
-
-        <p class="highlights-label">{{ t('catalog.highlights') }}</p>
-        <ul class="tag-list">
-          <li v-for="tag in tags" :key="tag">{{ tag }}</li>
-        </ul>
-
-        <a
-          v-if="isLive"
-          class="pill"
-          :href="meta.url"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          v-for="id in categoryIds"
+          :key="id"
+          type="button"
+          role="tab"
+          class="cat-tab"
+          :class="{ active: category === id }"
+          :aria-selected="category === id"
+          @click="selectCategory(id)"
         >
-          {{ t(`items.${item}.cta`) }}
-        </a>
-        <button v-else type="button" class="pill pill-muted" disabled>
-          {{ t(`items.${item}.cta`) }}
+          {{ t(`categories.${id}.label`) }}
         </button>
       </div>
+      <p class="cat-desc">{{ t(`categories.${category}.desc`) }}</p>
+      <p class="chapter">{{ t(`categories.${category}.chapter`) }} · {{ t(`categories.${category}.title`) }}</p>
+    </div>
 
-      <div class="preview" :class="{ soon: !isLive }">
-        <LiveVizCanvas :theme="theme" :mode="vizMode" />
-        <div class="preview-mask">
-          <span>{{ isLive ? t('catalog.previewLive') : t('catalog.previewSoon') }}</span>
+    <div
+      class="card-row"
+      :key="category"
+      :style="{ '--cols': Math.max(cards.length, 1) }"
+    >
+      <article
+        v-for="(card, i) in cards"
+        :key="card.id"
+        class="project-card"
+        :class="{ soon: card.status === 'soon', active: item === card.id }"
+        :style="{
+          '--accent': card.accent,
+          '--delay': `${i * 70}ms`,
+        }"
+        @mouseenter="onCardActivate(card.id)"
+        @focusin="onCardActivate(card.id)"
+      >
+        <div class="card-visual" aria-hidden="true">
+          <LiveVizCanvas :theme="theme" :mode="card.vizMode" />
+          <span class="badge" :class="card.status">{{ card.statusLabel }}</span>
+        </div>
+
+        <div class="card-body">
+          <h3>{{ card.title }}</h3>
+          <p class="card-desc">{{ card.desc }}</p>
+          <ul class="tag-list">
+            <li v-for="tag in card.tags.slice(0, 3)" :key="tag">{{ tag }}</li>
+          </ul>
+
           <a
-            v-if="isLive"
-            class="preview-link"
-            :href="meta.url"
+            v-if="card.status === 'live' && card.url"
+            class="pill card-cta"
+            :href="card.url"
             target="_blank"
             rel="noopener noreferrer"
+            @click="onCardActivate(card.id)"
           >
-            {{ t(`items.${item}.cta`) }}
+            {{ card.cta }}
           </a>
+          <button v-else type="button" class="pill card-cta pill-muted" disabled>
+            {{ card.cta }}
+          </button>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 </template>
@@ -158,6 +148,10 @@ function selectItem(id) {
   position: relative;
   z-index: 2;
   padding: 0 clamp(1.2rem, 5vw, 4.5rem) 3.5rem;
+}
+
+.catalog-head {
+  margin-bottom: 1.5rem;
 }
 
 .cat-tabs {
@@ -194,187 +188,142 @@ function selectItem(id) {
   color: var(--text-dim);
   font-size: 0.9rem;
   line-height: 1.55;
-  max-width: 40rem;
-  margin-bottom: 1.35rem;
+  max-width: 44rem;
+  margin-bottom: 0.55rem;
 }
 
-.item-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem 1.25rem;
-  margin-bottom: 2.25rem;
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.item-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  border: none;
-  background: transparent;
-  color: var(--text-dim);
-  font-size: clamp(0.85rem, 1.4vw, 0.98rem);
-  font-weight: 400;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
-}
-
-.item-tab:hover {
+.chapter {
   color: var(--text-muted);
-  transform: translateY(-1px);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
 }
 
-.item-tab.active {
-  color: var(--text);
-  font-weight: 600;
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  animation: rise 0.4s ease both;
 }
 
-.item-tab.soon {
-  opacity: 0.62;
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--bg) 62%, transparent);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+  animation: rise 0.45s ease both;
+  animation-delay: var(--delay);
 }
 
-.item-tab.soon.active {
-  opacity: 0.85;
+.project-card:hover,
+.project-card.active {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-soft));
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+.project-card.soon {
+  opacity: 0.78;
+}
+
+.project-card.soon:hover {
+  opacity: 0.9;
+}
+
+.card-visual {
+  position: relative;
+  height: 148px;
+  border-bottom: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--bg-soft) 80%, transparent);
+  overflow: hidden;
+}
+
+.project-card.soon .card-visual {
+  filter: saturate(0.7);
 }
 
 .badge {
+  position: absolute;
+  top: 0.65rem;
+  inset-inline-end: 0.65rem;
   font-size: 0.68rem;
   font-weight: 500;
-  padding: 0.12rem 0.45rem;
+  padding: 0.14rem 0.5rem;
   border-radius: 999px;
-  background: var(--select-bg);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
   color: var(--text-muted);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(6px);
 }
 
 .badge.live {
-  color: var(--accent, var(--text));
-  background: color-mix(in srgb, var(--accent, var(--text)) 16%, transparent);
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  background: color-mix(in srgb, var(--accent) 14%, var(--bg));
 }
 
-.badge.soon {
-  opacity: 0.8;
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 1.05rem 1.1rem;
+  gap: 0.55rem;
 }
 
-.panel {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: stretch;
-  animation: rise 0.45s ease both;
-}
-
-.copy {
-  transition: transform 0.2s ease-out;
-  will-change: transform;
-}
-
-.copy .chapter {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 0.35rem;
-}
-
-.copy h2 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
+.card-body h3 {
+  font-size: 1.08rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
-.desc {
-  max-width: 34rem;
+.card-desc {
   color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.65;
-  margin-bottom: 1.25rem;
-}
-
-.highlights-label {
-  color: var(--text-dim);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.55rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.7em;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.35rem;
   list-style: none;
-  margin: 0 0 1.5rem;
+  margin: 0.15rem 0 0.35rem;
   padding: 0;
 }
 
 .tag-list li {
-  padding: 0.3rem 0.7rem;
+  padding: 0.2rem 0.55rem;
   border: 1px solid var(--border-soft);
   border-radius: 999px;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  background: color-mix(in srgb, var(--bg) 50%, transparent);
+  color: var(--text-dim);
+  font-size: 0.7rem;
+}
+
+.card-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.95rem;
 }
 
 .pill-muted {
   opacity: 0.55;
   cursor: not-allowed;
-}
-
-.preview {
-  position: relative;
-  min-height: 280px;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid var(--border-soft);
-  background: color-mix(in srgb, var(--bg-soft) 75%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
-}
-
-.preview.soon {
-  filter: saturate(0.75);
-}
-
-.preview-mask {
-  position: absolute;
-  inset-inline-end: 0.85rem;
-  bottom: 0.85rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.4rem;
-  pointer-events: none;
-}
-
-.preview-mask span {
-  padding: 0.22rem 0.5rem;
-  border-radius: 4px;
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-}
-
-.preview-link {
-  pointer-events: auto;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  background: var(--text);
-  color: var(--bg);
-  font-size: 0.78rem;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.preview-link:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-.preview.soon .preview-mask span {
-  border-color: var(--border-soft);
-  color: var(--text-dim);
 }
 
 @keyframes rise {
@@ -388,13 +337,29 @@ function selectItem(id) {
   }
 }
 
-@media (max-width: 860px) {
-  .panel {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .card-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.85rem;
+    padding-bottom: 0.35rem;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .preview {
-    min-height: 220px;
+  .project-card {
+    flex: 0 0 min(78vw, 280px);
+    scroll-snap-align: start;
+  }
+
+  .card-visual {
+    height: 132px;
   }
 }
 </style>

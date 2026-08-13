@@ -297,7 +297,7 @@ function draw(time) {
   stepNodes()
 
   const mode = props.mode
-  if (mode === 'weather') {
+  if (mode === 'weather' || mode === 'trading') {
     drawWave(ctx, time)
     drawBars(ctx, time)
   } else if (mode === 'cesium' || mode === 'arcgis' || mode === 'geography') {

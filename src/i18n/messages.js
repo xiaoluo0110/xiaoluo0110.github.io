@@ -52,7 +52,7 @@ export const messages = {
         scenarios: {
           title: '应用场景落地',
           desc: '把可视化接到真实需求：气象分析、馆藏展示等。',
-          keywords: ['气象', '文博', '业务系统'],
+          keywords: ['气象', '交易辅助', '文博'],
         },
       },
     },
@@ -90,7 +90,7 @@ export const messages = {
         label: '应用场景',
         chapter: '板块 03',
         title: '落地应用展示',
-        desc: '面向真实业务的可视化应用，包括气象分析与馆藏数字化展示等。',
+        desc: '面向真实业务的可视化应用，包括气象分析、交易辅助与馆藏数字化展示等。',
       },
     },
     items: {
@@ -117,6 +117,12 @@ export const messages = {
         desc: '气象数据的空间呈现 —— 图层叠加、时空演变与分析视图。',
         cta: '进入气象可视化',
         tags: ['天气图层', '时空演变', '分析视图'],
+      },
+      trading: {
+        title: '交易辅助可视化',
+        desc: '面向交易决策的辅助可视化 —— 行情结构、信号线索与复盘视图。',
+        cta: '即将开放',
+        tags: ['行情结构', '信号线索', '复盘分析'],
       },
       cesium: {
         title: 'Cesium 三维',
@@ -232,7 +238,7 @@ export const messages = {
         scenarios: {
           title: '應用場景落地',
           desc: '把視覺化接到真實需求：氣象分析、館藏展示等。',
-          keywords: ['氣象', '文博', '業務系統'],
+          keywords: ['氣象', '交易輔助', '文博'],
         },
       },
     },
@@ -270,7 +276,7 @@ export const messages = {
         label: '應用場景',
         chapter: '板塊 03',
         title: '落地應用展示',
-        desc: '面向真實業務的視覺化應用，包括氣象分析與館藏數位化展示等。',
+        desc: '面向真實業務的視覺化應用，包括氣象分析、交易輔助與館藏數位化展示等。',
       },
     },
     items: {
@@ -297,6 +303,12 @@ export const messages = {
         desc: '氣象資料的空間呈現 —— 圖層疊加、時空演變與分析視圖。',
         cta: '進入氣象視覺化',
         tags: ['天氣圖層', '時空演變', '分析視圖'],
+      },
+      trading: {
+        title: '交易輔助視覺化',
+        desc: '面向交易決策的輔助視覺化 —— 行情結構、信號線索與復盤視圖。',
+        cta: '即將開放',
+        tags: ['行情結構', '信號線索', '復盤分析'],
       },
       cesium: {
         title: 'Cesium 三維',
@@ -413,7 +425,7 @@ export const messages = {
         scenarios: {
           title: 'Applied scenarios',
           desc: 'Ship visualization into weather analysis, museum displays, and more.',
-          keywords: ['Weather', 'Museum', 'Products'],
+          keywords: ['Weather', 'Trading', 'Museum'],
         },
       },
     },
@@ -451,7 +463,7 @@ export const messages = {
         label: 'Scenarios',
         chapter: 'Section 03',
         title: 'Applied Scenarios',
-        desc: 'Real-world visualization applications, from weather analysis to museum collections.',
+        desc: 'Real-world visualization applications, from weather analysis to trading tools and museum collections.',
       },
     },
     items: {
@@ -478,6 +490,12 @@ export const messages = {
         desc: 'Spatial weather data — layers, temporal change, and analysis views.',
         cta: 'Open Weather Visualization',
         tags: ['Weather Layers', 'Temporal Change', 'Analysis'],
+      },
+      trading: {
+        title: 'Trading Assistant Viz',
+        desc: 'Visualization for trading decisions — market structure, signal cues, and review views.',
+        cta: 'Coming Soon',
+        tags: ['Market Structure', 'Signal Cues', 'Trade Review'],
       },
       cesium: {
         title: 'Cesium 3D',
@@ -656,6 +674,12 @@ export const messages = {
         cta: '気象可視化を開く',
         tags: ['天気レイヤー', '時空間変化', '分析ビュー'],
       },
+      trading: {
+        title: '取引支援可視化',
+        desc: '取引判断のための可視化 —— 相場構造、シグナルの手がかり、振り返りビュー。',
+        cta: '近日公開',
+        tags: ['相場構造', 'シグナル', '振り返り'],
+      },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Cesium を核とした地球規模の3D可視化デモ。',
@@ -824,6 +848,12 @@ export const messages = {
         desc: '기상 데이터의 공간 표현 — 레이어 중첩, 시공간 변화, 분석 뷰.',
         cta: '기상 시각화 열기',
         tags: ['날씨 레이어', '시공간 변화', '분석 뷰'],
+      },
+      trading: {
+        title: '거래 보조 시각화',
+        desc: '거래 의사결정을 위한 시각화 —— 시세 구조, 신호 단서, 복기 뷰.',
+        cta: '곧 공개',
+        tags: ['시세 구조', '신호 단서', '복기 분석'],
       },
       cesium: {
         title: 'Cesium 3D',
@@ -994,6 +1024,12 @@ export const messages = {
         cta: 'เปิดวิชวลไลเซชันสภาพอากาศ',
         tags: ['เลเยอร์อากาศ', 'การเปลี่ยนแปลงเชิงเวลา', 'มุมมองวิเคราะห์'],
       },
+      trading: {
+        title: 'วิชวลไลเซชันช่วยเทรด',
+        desc: 'วิชวลไลเซชันช่วยตัดสินใจเทรด — โครงสร้างราคา สัญญาณ และมุมมองทบทวน',
+        cta: 'เร็วๆ นี้',
+        tags: ['โครงสร้างราคา', 'สัญญาณ', 'ทบทวนการเทรด'],
+      },
       cesium: {
         title: 'Cesium 3D',
         desc: 'เดโมวิชวลไลเซชัน 3D ระดับโลกด้วย Cesium',
@@ -1162,6 +1198,12 @@ export const messages = {
         desc: 'Trình bày không gian dữ liệu thời tiết — lớp chồng, biến đổi thời-không gian và góc nhìn phân tích.',
         cta: 'Mở trực quan khí tượng',
         tags: ['Lớp thời tiết', 'Biến đổi thời-không', 'Góc nhìn phân tích'],
+      },
+      trading: {
+        title: 'Trực quan hỗ trợ giao dịch',
+        desc: 'Trực quan hỗ trợ quyết định giao dịch — cấu trúc giá, tín hiệu và góc nhìn review.',
+        cta: 'Sắp mở',
+        tags: ['Cấu trúc giá', 'Tín hiệu', 'Review giao dịch'],
       },
       cesium: {
         title: 'Cesium 3D',
@@ -1332,6 +1374,12 @@ export const messages = {
         cta: 'Buka visualisasi cuaca',
         tags: ['Lapisan cuaca', 'Perubahan temporal', 'Analisis'],
       },
+      trading: {
+        title: 'Visualisasi bantuan dagangan',
+        desc: 'Visualisasi untuk keputusan dagangan — struktur pasaran, isyarat, dan paparan semakan.',
+        cta: 'Akan datang',
+        tags: ['Struktur pasaran', 'Isyarat', 'Semakan dagangan'],
+      },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Demo visualisasi 3D skala bumi dikuasakan oleh Cesium.',
@@ -1500,6 +1548,12 @@ export const messages = {
         desc: 'Données météo spatiales — couches, évolution temporelle et vues d’analyse.',
         cta: 'Ouvrir la visualisation météo',
         tags: ['Couches météo', 'Évolution temporelle', 'Analyse'],
+      },
+      trading: {
+        title: 'Viz d’aide au trading',
+        desc: 'Visualisation pour decisions de trading — structure de marché, signaux et revue.',
+        cta: 'Bientôt',
+        tags: ['Structure de marché', 'Signaux', 'Revue de trade'],
       },
       cesium: {
         title: 'Cesium 3D',
@@ -1670,6 +1724,12 @@ export const messages = {
         cta: 'Wetter-Visualisierung öffnen',
         tags: ['Wetterlayer', 'Zeitliche Veränderung', 'Analyse'],
       },
+      trading: {
+        title: 'Trading-Assistent-Viz',
+        desc: 'Visualisierung für Trading-Entscheidungen — Marktstruktur, Signale und Review-Ansichten.',
+        cta: 'Demnächst',
+        tags: ['Marktstruktur', 'Signale', 'Trade-Review'],
+      },
       cesium: {
         title: 'Cesium 3D',
         desc: '3D-Visualisierungsdemos im Erdmaßstab mit Cesium.',
@@ -1839,6 +1899,12 @@ export const messages = {
         cta: 'Открыть метеовизуализацию',
         tags: ['Погодные слои', 'Временные изменения', 'Анализ'],
       },
+      trading: {
+        title: 'Визуализация для трейдинга',
+        desc: 'Визуализация для торговых решений — структура рынка, сигналы и обзор сделок.',
+        cta: 'Скоро',
+        tags: ['Структура рынка', 'Сигналы', 'Обзор сделок'],
+      },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Демо 3D-визуализации планетарного масштаба на Cesium.',
@@ -2007,6 +2073,12 @@ export const messages = {
         desc: 'بيانات طقس مكانية — طبقات وتغيّر زمني ووجهات تحليل.',
         cta: 'فتح تصور الطقس',
         tags: ['طبقات الطقس', 'تغيّر زمني', 'تحليل'],
+      },
+      trading: {
+        title: 'تصور مساعد التداول',
+        desc: 'تصور لدعم قرارات التداول — بنية السوق وإشارات وواجهات المراجعة.',
+        cta: 'قريبًا',
+        tags: ['بنية السوق', 'إشارات', 'مراجعة الصفقات'],
       },
       cesium: {
         title: 'Cesium ثلاثي الأبعاد',
