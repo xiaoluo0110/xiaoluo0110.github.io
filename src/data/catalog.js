@@ -2,7 +2,7 @@
 export const CATEGORIES = [
   {
     id: 'tools',
-    items: ['math', 'geography', 'physics'],
+    items: ['math', 'geography', 'physics', 'chemistry', 'history'],
   },
   {
     id: 'spatial',
@@ -31,10 +31,24 @@ export const ITEMS = {
   },
   physics: {
     category: 'tools',
-    status: 'soon',
-    url: null,
+    status: 'live',
+    url: 'https://xiaoluo0110.github.io/physics-visualization/',
     accent: '#e8a87c',
     icon: 'M12 3v4M12 17v4M3 12h4M17 12h4M6.2 6.2l2.8 2.8M15 15l2.8 2.8M6.2 17.8L9 15M15 9l2.8-2.8',
+  },
+  chemistry: {
+    category: 'tools',
+    status: 'live',
+    url: 'https://xiaoluo0110.github.io/chemical-visualization/',
+    accent: '#b07ee8',
+    icon: 'M10 2v6.5l-4 7a4 4 0 0 0 3.5 6h5a4 4 0 0 0 3.5-6l-4-7V2M8 4h8',
+  },
+  history: {
+    category: 'tools',
+    status: 'live',
+    url: 'https://xiaoluo0110.github.io/historical-visualization/',
+    accent: '#c9a86c',
+    icon: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z',
   },
   weather: {
     category: 'scenarios',

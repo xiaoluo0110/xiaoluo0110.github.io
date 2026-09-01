@@ -42,7 +42,7 @@ export const messages = {
         tools: {
           title: '学科可视化',
           desc: '用图形建立直觉，让抽象概念变得可操作。',
-          keywords: ['数学', '地理', '物理'],
+          keywords: ['数学', '地理', '物理', '化学'],
         },
         spatial: {
           title: '三维空间表达',
@@ -78,7 +78,7 @@ export const messages = {
         label: '学科工具',
         chapter: '板块 01',
         title: '学科可视化',
-        desc: '面向数学、地理与物理的交互式可视化工具，用图形建立直觉。',
+        desc: '面向数学、地理、物理、化学与历史等学科的交互式可视化工具，用图形建立直觉。',
       },
       spatial: {
         label: '三维示例',
@@ -108,9 +108,21 @@ export const messages = {
       },
       physics: {
         title: '物理可视化',
-        desc: '力学、波动与场等概念的动态演示，规划中。',
-        cta: '即将开放',
+        desc: '力学、波动与场等概念的动态交互演示。',
+        cta: '进入物理可视化',
         tags: ['力学模拟', '波动干涉', '场线可视化'],
+      },
+      chemistry: {
+        title: '化学可视化',
+        desc: '分子结构与化学反应过程的交互可视化。',
+        cta: '进入化学可视化',
+        tags: ['分子结构', '反应过程', '交互演示'],
+      },
+      history: {
+        title: '历史地图可视化',
+        desc: '史鉴 —— 历史时空与地理格局的交互地图呈现。',
+        cta: '进入历史地图',
+        tags: ['历史地图', '时空叙事', '地理格局'],
       },
       weather: {
         title: '气象可视化',
@@ -228,7 +240,7 @@ export const messages = {
         tools: {
           title: '學科視覺化',
           desc: '用圖形建立直覺，讓抽象概念變得可操作。',
-          keywords: ['數學', '地理', '物理'],
+          keywords: ['數學', '地理', '物理', '化學'],
         },
         spatial: {
           title: '三維空間表達',
@@ -264,7 +276,7 @@ export const messages = {
         label: '學科工具',
         chapter: '板塊 01',
         title: '學科視覺化',
-        desc: '面向數學、地理與物理的互動式視覺化工具，用圖形建立直覺。',
+        desc: '面向數學、地理、物理、化學與歷史等學科的互動式視覺化工具，用圖形建立直覺。',
       },
       spatial: {
         label: '三維示例',
@@ -294,9 +306,21 @@ export const messages = {
       },
       physics: {
         title: '物理視覺化',
-        desc: '力學、波動與場等概念的動態演示，規劃中。',
-        cta: '即將開放',
+        desc: '力學、波動與場等概念的動態互動演示。',
+        cta: '進入物理視覺化',
         tags: ['力學模擬', '波動干涉', '場線視覺化'],
+      },
+      chemistry: {
+        title: '化學視覺化',
+        desc: '分子結構與化學反應過程的互動視覺化。',
+        cta: '進入化學視覺化',
+        tags: ['分子結構', '反應過程', '互動演示'],
+      },
+      history: {
+        title: '歷史地圖視覺化',
+        desc: '史鑑 —— 歷史時空與地理格局的互動地圖呈現。',
+        cta: '進入歷史地圖',
+        tags: ['歷史地圖', '時空敘事', '地理格局'],
       },
       weather: {
         title: '氣象視覺化',
@@ -415,7 +439,7 @@ export const messages = {
         tools: {
           title: 'Subject visualization',
           desc: 'Build intuition with graphics you can manipulate.',
-          keywords: ['Math', 'Geography', 'Physics'],
+          keywords: ['Math', 'Geography', 'Physics', 'Chemistry'],
         },
         spatial: {
           title: '3D spatial expression',
@@ -451,7 +475,7 @@ export const messages = {
         label: 'Subject Tools',
         chapter: 'Section 01',
         title: 'Subject Visualization',
-        desc: 'Interactive tools for math, geography, and physics — building intuition through graphics.',
+        desc: 'Interactive tools for math, geography, physics, chemistry, and history — building intuition through graphics.',
       },
       spatial: {
         label: '3D Examples',
@@ -481,9 +505,21 @@ export const messages = {
       },
       physics: {
         title: 'Physics Visualization',
-        desc: 'Dynamic demos for mechanics, waves, and fields — planned.',
-        cta: 'Coming Soon',
+        desc: 'Interactive demos for mechanics, waves, and fields.',
+        cta: 'Open Physics Visualization',
         tags: ['Mechanics', 'Wave Interference', 'Field Lines'],
+      },
+      chemistry: {
+        title: 'Chemistry Visualization',
+        desc: 'Interactive visualization of molecular structures and chemical reactions.',
+        cta: 'Open Chemistry Visualization',
+        tags: ['Molecular Structure', 'Reactions', 'Interactive Demo'],
+      },
+      history: {
+        title: 'Historical Map Viz',
+        desc: 'Shijian — interactive maps of historical time and geographic patterns.',
+        cta: 'Open Historical Maps',
+        tags: ['Historical Maps', 'Spatiotemporal', 'Geographic Patterns'],
       },
       weather: {
         title: 'Weather Visualization',
@@ -664,9 +700,21 @@ export const messages = {
       },
       physics: {
         title: '物理可視化',
-        desc: '力学・波動・場などの動的デモ — 計画中。',
-        cta: '近日公開',
+        desc: '力学・波動・場などの動的インタラクティブデモ。',
+        cta: '物理可視化を開く',
         tags: ['力学シミュレーション', '波動干渉', '磁力線可視化'],
+      },
+      chemistry: {
+        title: '化学可視化',
+        desc: '分子構造と化学反応過程のインタラクティブ可視化。',
+        cta: '化学可視化を開く',
+        tags: ['分子構造', '反応過程', '対話デモ'],
+      },
+      history: {
+        title: '歴史地図可視化',
+        desc: '史鑑 — 歴史の時空と地理格局のインタラクティブ地図。',
+        cta: '歴史地図を開く',
+        tags: ['歴史地図', '時空ナラティブ', '地理格局'],
       },
       weather: {
         title: '気象可視化',
@@ -839,9 +887,21 @@ export const messages = {
       },
       physics: {
         title: '물리 시각화',
-        desc: '역학, 파동, 장 등의 동적 데모 — 계획 중.',
-        cta: '곧 공개',
+        desc: '역학, 파동, 장 등의 동적 인터랙티브 데모.',
+        cta: '물리 시각화 열기',
         tags: ['역학 시뮬레이션', '파동 간섭', '장선 시각화'],
+      },
+      chemistry: {
+        title: '화학 시각화',
+        desc: '분자 구조와 화학 반응 과정의 인터랙티브 시각화.',
+        cta: '화학 시각화 열기',
+        tags: ['분자 구조', '반응 과정', '인터랙션 데모'],
+      },
+      history: {
+        title: '역사 지도 시각화',
+        desc: '사감 — 역사 시공간과 지리 패턴의 인터랙티브 지도.',
+        cta: '역사 지도 열기',
+        tags: ['역사 지도', '시공간 서사', '지리 패턴'],
       },
       weather: {
         title: '기상 시각화',
@@ -1014,9 +1074,21 @@ export const messages = {
       },
       physics: {
         title: 'วิชวลไลเซชันฟิสิกส์',
-        desc: 'เดโมเชิงพลวัตของกลศาสตร์ คลื่น และสนาม — อยู่ระหว่างวางแผน',
-        cta: 'เร็วๆ นี้',
+        desc: 'เดโมเชิงพลวัตแบบโต้ตอบของกลศาสตร์ คลื่น และสนาม',
+        cta: 'เปิดวิชวลไลเซชันฟิสิกส์',
         tags: ['จำลองกลศาสตร์', 'การแทรกสอดของคลื่น', 'เส้นสนาม'],
+      },
+      chemistry: {
+        title: 'วิชวลไลเซชันเคมี',
+        desc: 'การมองเห็นโครงสร้างโมเลกุลและปฏิกิริยาเคมีแบบโต้ตอบ',
+        cta: 'เปิดวิชวลไลเซชันเคมี',
+        tags: ['โครงสร้างโมเลกุล', 'ปฏิกิริยา', 'เดโมโต้ตอบ'],
+      },
+      history: {
+        title: 'แผนที่ประวัติศาสตร์',
+        desc: 'Shijian — แผนที่โต้ตอบของเวลาและรูปแบบทางภูมิศาสตร์ทางประวัติศาสตร์',
+        cta: 'เปิดแผนที่ประวัติศาสตร์',
+        tags: ['แผนที่ประวัติศาสตร์', 'เรื่องเล่าเชิงเวลา', 'รูปแบบภูมิศาสตร์'],
       },
       weather: {
         title: 'วิชวลไลเซชันสภาพอากาศ',
@@ -1189,9 +1261,21 @@ export const messages = {
       },
       physics: {
         title: 'Trực quan vật lý',
-        desc: 'Demo động cho cơ học, sóng và trường — đang lập kế hoạch.',
-        cta: 'Sắp mở',
+        desc: 'Demo tương tác động cho cơ học, sóng và trường.',
+        cta: 'Mở trực quan vật lý',
         tags: ['Mô phỏng cơ học', 'Giao thoa sóng', 'Đường sức trường'],
+      },
+      chemistry: {
+        title: 'Trực quan hóa học',
+        desc: 'Trực quan tương tác cấu trúc phân tử và quá trình phản ứng.',
+        cta: 'Mở trực quan hóa học',
+        tags: ['Cấu trúc phân tử', 'Phản ứng', 'Demo tương tác'],
+      },
+      history: {
+        title: 'Bản đồ lịch sử',
+        desc: 'Shijian — bản đồ tương tác về thời-không và mô hình địa lý lịch sử.',
+        cta: 'Mở bản đồ lịch sử',
+        tags: ['Bản đồ lịch sử', 'Kể chuyện thời-không', 'Mô hình địa lý'],
       },
       weather: {
         title: 'Trực quan khí tượng',
@@ -1364,9 +1448,21 @@ export const messages = {
       },
       physics: {
         title: 'Visualisasi fizik',
-        desc: 'Demo dinamik untuk mekanik, gelombang dan medan — dirancang.',
-        cta: 'Akan datang',
+        desc: 'Demo dinamik interaktif untuk mekanik, gelombang dan medan.',
+        cta: 'Buka visualisasi fizik',
         tags: ['Simulasi mekanik', 'Gangguan gelombang', 'Garis medan'],
+      },
+      chemistry: {
+        title: 'Visualisasi kimia',
+        desc: 'Visualisasi interaktif struktur molekul dan tindak balas kimia.',
+        cta: 'Buka visualisasi kimia',
+        tags: ['Struktur molekul', 'Tindak balas', 'Demo interaktif'],
+      },
+      history: {
+        title: 'Peta sejarah',
+        desc: 'Shijian — peta interaktif masa dan corak geografi sejarah.',
+        cta: 'Buka peta sejarah',
+        tags: ['Peta sejarah', 'Naratif masa', 'Corak geografi'],
       },
       weather: {
         title: 'Visualisasi cuaca',
@@ -1539,9 +1635,21 @@ export const messages = {
       },
       physics: {
         title: 'Visualisation physique',
-        desc: 'Démos dynamiques pour mécanique, ondes et champs — prévu.',
-        cta: 'Bientôt',
+        desc: 'Démos interactives pour mécanique, ondes et champs.',
+        cta: 'Ouvrir la visualisation physique',
         tags: ['Mécanique', 'Interférence', 'Lignes de champ'],
+      },
+      chemistry: {
+        title: 'Visualisation chimique',
+        desc: 'Visualisation interactive des structures moléculaires et réactions.',
+        cta: 'Ouvrir la visualisation chimique',
+        tags: ['Structure moléculaire', 'Réactions', 'Démo interactive'],
+      },
+      history: {
+        title: 'Cartes historiques',
+        desc: 'Shijian — cartes interactives du temps et des motifs géographiques.',
+        cta: 'Ouvrir les cartes historiques',
+        tags: ['Cartes historiques', 'Récit spatiotemporel', 'Motifs géographiques'],
       },
       weather: {
         title: 'Visualisation météo',
@@ -1714,9 +1822,21 @@ export const messages = {
       },
       physics: {
         title: 'Physik-Visualisierung',
-        desc: 'Dynamische Demos zu Mechanik, Wellen und Feldern — geplant.',
-        cta: 'Demnächst',
+        desc: 'Interaktive dynamische Demos zu Mechanik, Wellen und Feldern.',
+        cta: 'Physik-Visualisierung öffnen',
         tags: ['Mechanik', 'Welleninterferenz', 'Feldlinien'],
+      },
+      chemistry: {
+        title: 'Chemie-Visualisierung',
+        desc: 'Interaktive Visualisierung von Molekülstrukturen und Reaktionen.',
+        cta: 'Chemie-Visualisierung öffnen',
+        tags: ['Molekülstruktur', 'Reaktionen', 'Interaktives Demo'],
+      },
+      history: {
+        title: 'Historische Karten',
+        desc: 'Shijian — interaktive Karten historischer Zeit und Geografien.',
+        cta: 'Historische Karten öffnen',
+        tags: ['Historische Karten', 'Zeit-Erzählung', 'Geografische Muster'],
       },
       weather: {
         title: 'Wetter-Visualisierung',
@@ -1889,9 +2009,21 @@ export const messages = {
       },
       physics: {
         title: 'Физическая визуализация',
-        desc: 'Динамические демо механики, волн и полей — в планах.',
-        cta: 'Скоро',
+        desc: 'Интерактивные демо механики, волн и полей.',
+        cta: 'Открыть физ. визуализацию',
         tags: ['Механика', 'Интерференция', 'Силовые линии'],
+      },
+      chemistry: {
+        title: 'Химическая визуализация',
+        desc: 'Интерактивная визуализация молекулярных структур и реакций.',
+        cta: 'Открыть хим. визуализацию',
+        tags: ['Молекулярная структура', 'Реакции', 'Интерактивное демо'],
+      },
+      history: {
+        title: 'Исторические карты',
+        desc: 'Shijian — интерактивные карты исторического времени и географии.',
+        cta: 'Открыть исторические карты',
+        tags: ['Исторические карты', 'Пространственный нарратив', 'Географические паттерны'],
       },
       weather: {
         title: 'Метеовизуализация',
@@ -2064,9 +2196,21 @@ export const messages = {
       },
       physics: {
         title: 'تصور الفيزياء',
-        desc: 'عروض ديناميكية للميكانيكا والموجات والحقول — قيد التخطيط.',
-        cta: 'قريبًا',
+        desc: 'عروض تفاعلية ديناميكية للميكانيكا والموجات والحقول.',
+        cta: 'فتح تصور الفيزياء',
         tags: ['محاكاة ميكانيكية', 'تداخل الموجات', 'خطوط الحقل'],
+      },
+      chemistry: {
+        title: 'تصور الكيمياء',
+        desc: 'تصور تفاعلي للتراكيب الجزيئية وعمليات التفاعل الكيميائي.',
+        cta: 'فتح تصور الكيمياء',
+        tags: ['بنية جزيئية', 'تفاعلات', 'عرض تفاعلي'],
+      },
+      history: {
+        title: 'خرائط تاريخية',
+        desc: 'Shijian — خرائط تفاعلية للزمن والأنماط الجغرافية التاريخية.',
+        cta: 'فتح الخرائط التاريخية',
+        tags: ['خرائط تاريخية', 'سرد زماني مكاني', 'أنماط جغرافية'],
       },
       weather: {
         title: 'تصور الطقس',

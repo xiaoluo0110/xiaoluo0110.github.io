@@ -7,7 +7,7 @@ import { useMouse } from '../composables/useMouse'
 import { useTheme } from '../composables/useTheme'
 
 /** 精选区只展示已上线作品，避免「规划中」稀释信息密度 */
-const SLIDE_IDS = ['math', 'geography', 'weather', 'arcgis']
+const SLIDE_IDS = ['math', 'geography', 'physics', 'chemistry', 'history', 'weather', 'arcgis']
 
 const { t } = useI18n()
 const mouse = useMouse()

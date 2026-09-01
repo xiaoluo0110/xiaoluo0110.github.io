@@ -55,8 +55,8 @@ watch(
 
 function vizModeFor(id) {
   if (id === 'arcgis' || id === 'cesium') return id
-  if (id === 'threejs' || id === 'geography') return 'cesium'
-  if (id === 'physics') return 'math'
+  if (id === 'threejs' || id === 'geography' || id === 'history') return 'cesium'
+  if (id === 'physics' || id === 'chemistry') return 'math'
   if (id === 'trading') return 'weather'
   return id
 }

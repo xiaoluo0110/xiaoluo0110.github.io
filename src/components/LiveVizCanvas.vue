@@ -306,8 +306,11 @@ function draw(time) {
   } else if (mode === 'museum') {
     drawOrbit(ctx, time)
     drawNetwork(ctx)
-  } else if (mode === 'math') {
+  } else if (mode === 'math' || mode === 'physics' || mode === 'chemistry') {
     drawWave(ctx, time)
+    drawNetwork(ctx)
+  } else if (mode === 'history' || mode === 'geography') {
+    drawGlobe(ctx, time)
     drawNetwork(ctx)
   } else {
     drawWave(ctx, time)
