@@ -72,73 +72,77 @@ function onCardActivate(id) {
 
 <template>
   <section id="catalog" class="catalog">
-    <div class="catalog-head">
-      <div
-        class="cat-tabs"
-        role="tablist"
-        :style="{ transform: 'translate3d(calc(var(--mnx) * 4px), 0, 0)' }"
-      >
-        <button
-          v-for="id in categoryIds"
-          :key="id"
-          type="button"
-          role="tab"
-          class="cat-tab"
-          :class="{ active: category === id }"
-          :aria-selected="category === id"
-          @click="selectCategory(id)"
+    <div class="catalog-layout">
+      <aside class="catalog-sidebar">
+        <div
+          class="cat-tabs"
+          role="tablist"
+          aria-orientation="vertical"
+          :style="{ transform: 'translate3d(calc(var(--mnx) * 4px), 0, 0)' }"
         >
-          {{ t(`categories.${id}.label`) }}
-        </button>
-      </div>
-      <p class="cat-desc">{{ t(`categories.${category}.desc`) }}</p>
-      <p class="chapter">{{ t(`categories.${category}.chapter`) }} · {{ t(`categories.${category}.title`) }}</p>
-    </div>
-
-    <div
-      class="card-row"
-      :key="category"
-      :style="{ '--cols': Math.max(cards.length, 1) }"
-    >
-      <article
-        v-for="(card, i) in cards"
-        :key="card.id"
-        class="project-card"
-        :class="{ soon: card.status === 'soon', active: item === card.id }"
-        :style="{
-          '--accent': card.accent,
-          '--delay': `${i * 70}ms`,
-        }"
-        @mouseenter="onCardActivate(card.id)"
-        @focusin="onCardActivate(card.id)"
-      >
-        <div class="card-visual" aria-hidden="true">
-          <LiveVizCanvas :theme="theme" :mode="card.vizMode" />
-          <span class="badge" :class="card.status">{{ card.statusLabel }}</span>
-        </div>
-
-        <div class="card-body">
-          <h3>{{ card.title }}</h3>
-          <p class="card-desc">{{ card.desc }}</p>
-          <ul class="tag-list">
-            <li v-for="tag in card.tags.slice(0, 3)" :key="tag">{{ tag }}</li>
-          </ul>
-
-          <a
-            v-if="card.status === 'live' && card.url"
-            class="pill card-cta"
-            :href="card.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            @click="onCardActivate(card.id)"
+          <button
+            v-for="id in categoryIds"
+            :key="id"
+            type="button"
+            role="tab"
+            class="cat-tab"
+            :class="{ active: category === id }"
+            :aria-selected="category === id"
+            @click="selectCategory(id)"
           >
-            {{ card.cta }}
-          </a>
-          <button v-else type="button" class="pill card-cta pill-muted" disabled>
-            {{ card.cta }}
+            {{ t(`categories.${id}.label`) }}
           </button>
         </div>
-      </article>
+      </aside>
+
+      <div class="catalog-main">
+        <div class="catalog-head">
+          <p class="cat-desc">{{ t(`categories.${category}.desc`) }}</p>
+          <p class="chapter">{{ t(`categories.${category}.chapter`) }} · {{ t(`categories.${category}.title`) }}</p>
+        </div>
+
+        <div class="card-row" :key="category">
+          <article
+            v-for="(card, i) in cards"
+            :key="card.id"
+            class="project-card"
+            :class="{ soon: card.status === 'soon', active: item === card.id }"
+            :style="{
+              '--accent': card.accent,
+              '--delay': `${i * 70}ms`,
+            }"
+            @mouseenter="onCardActivate(card.id)"
+            @focusin="onCardActivate(card.id)"
+          >
+            <div class="card-visual" aria-hidden="true">
+              <LiveVizCanvas :theme="theme" :mode="card.vizMode" />
+              <span class="badge" :class="card.status">{{ card.statusLabel }}</span>
+            </div>
+
+            <div class="card-body">
+              <h3>{{ card.title }}</h3>
+              <p class="card-desc">{{ card.desc }}</p>
+              <ul class="tag-list">
+                <li v-for="tag in card.tags.slice(0, 3)" :key="tag">{{ tag }}</li>
+              </ul>
+
+              <a
+                v-if="card.status === 'live' && card.url"
+                class="pill card-cta"
+                :href="card.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click="onCardActivate(card.id)"
+              >
+                {{ card.cta }}
+              </a>
+              <button v-else type="button" class="pill card-cta pill-muted" disabled>
+                {{ card.cta }}
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -150,38 +154,63 @@ function onCardActivate(id) {
   padding: 0 clamp(1.2rem, 5vw, 4.5rem) 3.5rem;
 }
 
-.catalog-head {
-  margin-bottom: 1.5rem;
+.catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 9.5rem) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.catalog-sidebar {
+  position: sticky;
+  top: 5.5rem;
 }
 
 .cat-tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin-bottom: 0.7rem;
+  flex-direction: column;
+  gap: 0.35rem;
   transition: transform 0.2s ease-out;
   will-change: transform;
 }
 
 .cat-tab {
+  display: block;
+  width: 100%;
   border: none;
   background: transparent;
   color: var(--text-dim);
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-size: 0.95rem;
   font-weight: 500;
+  line-height: 1.35;
+  text-align: start;
   cursor: pointer;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  padding: 0.65rem 0.85rem;
+  border-inline-start: 2px solid transparent;
+  border-radius: 0 10px 10px 0;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .cat-tab:hover {
   color: var(--text-muted);
+  background: color-mix(in srgb, var(--select-bg) 70%, transparent);
 }
 
 .cat-tab.active {
   color: var(--text);
-  border-bottom-color: var(--text);
+  border-inline-start-color: var(--text);
+  background: color-mix(in srgb, var(--select-bg) 85%, transparent);
+}
+
+.catalog-main {
+  min-width: 0;
+}
+
+.catalog-head {
+  margin-bottom: 1.25rem;
 }
 
 .cat-desc {
@@ -200,7 +229,7 @@ function onCardActivate(id) {
 
 .card-row {
   display: grid;
-  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   align-items: stretch;
   animation: rise 0.4s ease both;
@@ -337,7 +366,42 @@ function onCardActivate(id) {
   }
 }
 
+@media (max-width: 1100px) {
+  .card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .catalog-sidebar {
+    position: static;
+  }
+
+  .cat-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .cat-tab {
+    width: auto;
+    padding: 0.45rem 0.85rem;
+    border-inline-start: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+  }
+
+  .cat-tab.active {
+    border-inline-start-color: transparent;
+    border-bottom-color: var(--text);
+    background: transparent;
+  }
+
   .card-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
