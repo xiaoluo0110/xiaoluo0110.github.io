@@ -66,8 +66,8 @@ export const ITEMS = {
   },
   cesium: {
     category: 'spatial',
-    status: 'soon',
-    url: null,
+    status: 'live',
+    url: 'https://xiaoluo0110.github.io/vuewithcesium/',
     accent: '#6ec6a8',
     icon: 'M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zm0 4.2L7 10v4l5 2.8 5-2.8v-4l-5-2.8z',
   },
@@ -99,3 +99,4 @@ export function getItemsByCategory(categoryId) {
 }
 
 export const CATALOG_NAV_IDS = CATEGORIES.map((c) => c.id)
+

@@ -139,7 +139,7 @@ export const messages = {
       cesium: {
         title: 'Cesium 三维',
         desc: '以 Cesium 为核心的地球级三维可视化 Demo。',
-        cta: '即将开放',
+        cta: '进入 Cesium 三维',
         tags: ['全球地形', '时空轨迹', '倾斜摄影'],
       },
       arcgis: {
@@ -331,13 +331,13 @@ export const messages = {
       trading: {
         title: '交易輔助視覺化',
         desc: '面向交易決策的輔助視覺化 —— 行情結構、信號線索與復盤視圖。',
-        cta: '即將開放',
+        cta: '進入 Cesium 三維',
         tags: ['行情結構', '信號線索', '復盤分析'],
       },
       cesium: {
         title: 'Cesium 三維',
         desc: '以 Cesium 為核心的地球級三維視覺化 Demo。',
-        cta: '即將開放',
+        cta: '進入 Cesium 三維',
         tags: ['全球地形', '時空軌跡', '傾斜攝影'],
       },
       arcgis: {
@@ -530,13 +530,13 @@ export const messages = {
       trading: {
         title: 'Trading Assistant Viz',
         desc: 'Visualization for trading decisions — market structure, signal cues, and review views.',
-        cta: 'Coming Soon',
+        cta: 'Open Cesium',
         tags: ['Market Structure', 'Signal Cues', 'Trade Review'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Earth-scale 3D visualization demos powered by Cesium.',
-        cta: 'Coming Soon',
+        cta: 'Open Cesium',
         tags: ['Global Terrain', 'Spatiotemporal', 'Oblique Imagery'],
       },
       arcgis: {
@@ -725,13 +725,13 @@ export const messages = {
       trading: {
         title: '取引支援可視化',
         desc: '取引判断のための可視化 —— 相場構造、シグナルの手がかり、振り返りビュー。',
-        cta: '近日公開',
+        cta: 'Cesium を開く',
         tags: ['相場構造', 'シグナル', '振り返り'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Cesium を核とした地球規模の3D可視化デモ。',
-        cta: '近日公開',
+        cta: 'Cesium を開く',
         tags: ['全球地形', '時空間軌跡', '傾斜写真'],
       },
       arcgis: {
@@ -912,13 +912,13 @@ export const messages = {
       trading: {
         title: '거래 보조 시각화',
         desc: '거래 의사결정을 위한 시각화 —— 시세 구조, 신호 단서, 복기 뷰.',
-        cta: '곧 공개',
+        cta: 'Cesium 열기',
         tags: ['시세 구조', '신호 단서', '복기 분석'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Cesium 기반의 지구 규모 3D 시각화 데모.',
-        cta: '곧 공개',
+        cta: 'Cesium 열기',
         tags: ['전지구 지형', '시공간 궤적', '경사 사진'],
       },
       arcgis: {
@@ -1099,13 +1099,13 @@ export const messages = {
       trading: {
         title: 'วิชวลไลเซชันช่วยเทรด',
         desc: 'วิชวลไลเซชันช่วยตัดสินใจเทรด — โครงสร้างราคา สัญญาณ และมุมมองทบทวน',
-        cta: 'เร็วๆ นี้',
+        cta: 'เปิด Cesium',
         tags: ['โครงสร้างราคา', 'สัญญาณ', 'ทบทวนการเทรด'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'เดโมวิชวลไลเซชัน 3D ระดับโลกด้วย Cesium',
-        cta: 'เร็วๆ นี้',
+        cta: 'เปิด Cesium',
         tags: ['ภูมิประเทศโลก', 'เส้นทางเชิงเวลา', 'ภาพเอียง'],
       },
       arcgis: {
@@ -1286,13 +1286,13 @@ export const messages = {
       trading: {
         title: 'Trực quan hỗ trợ giao dịch',
         desc: 'Trực quan hỗ trợ quyết định giao dịch — cấu trúc giá, tín hiệu và góc nhìn review.',
-        cta: 'Sắp mở',
+        cta: 'Mở Cesium',
         tags: ['Cấu trúc giá', 'Tín hiệu', 'Review giao dịch'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Demo trực quan 3D quy mô trái đất với Cesium.',
-        cta: 'Sắp mở',
+        cta: 'Mở Cesium',
         tags: ['Địa hình toàn cầu', 'Quỹ đạo thời-không', 'Ảnh nghiêng'],
       },
       arcgis: {
@@ -1473,13 +1473,13 @@ export const messages = {
       trading: {
         title: 'Visualisasi bantuan dagangan',
         desc: 'Visualisasi untuk keputusan dagangan — struktur pasaran, isyarat, dan paparan semakan.',
-        cta: 'Akan datang',
+        cta: 'Buka Cesium',
         tags: ['Struktur pasaran', 'Isyarat', 'Semakan dagangan'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Demo visualisasi 3D skala bumi dikuasakan oleh Cesium.',
-        cta: 'Akan datang',
+        cta: 'Buka Cesium',
         tags: ['Topografi global', 'Spatiotemporal', 'Imej serong'],
       },
       arcgis: {
@@ -1660,13 +1660,13 @@ export const messages = {
       trading: {
         title: 'Viz d’aide au trading',
         desc: 'Visualisation pour decisions de trading — structure de marché, signaux et revue.',
-        cta: 'Bientôt',
+        cta: 'Ouvrir Cesium',
         tags: ['Structure de marché', 'Signaux', 'Revue de trade'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Démos de visualisation 3D à l’échelle terrestre avec Cesium.',
-        cta: 'Bientôt',
+        cta: 'Ouvrir Cesium',
         tags: ['Relief mondial', 'Spatiotemporel', 'Imagerie oblique'],
       },
       arcgis: {
@@ -1847,13 +1847,13 @@ export const messages = {
       trading: {
         title: 'Trading-Assistent-Viz',
         desc: 'Visualisierung für Trading-Entscheidungen — Marktstruktur, Signale und Review-Ansichten.',
-        cta: 'Demnächst',
+        cta: 'Cesium öffnen',
         tags: ['Marktstruktur', 'Signale', 'Trade-Review'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: '3D-Visualisierungsdemos im Erdmaßstab mit Cesium.',
-        cta: 'Demnächst',
+        cta: 'Cesium öffnen',
         tags: ['Globales Terrain', 'Spatiotemporal', 'Schrägbild'],
       },
       arcgis: {
@@ -2034,13 +2034,13 @@ export const messages = {
       trading: {
         title: 'Визуализация для трейдинга',
         desc: 'Визуализация для торговых решений — структура рынка, сигналы и обзор сделок.',
-        cta: 'Скоро',
+        cta: 'Открыть Cesium',
         tags: ['Структура рынка', 'Сигналы', 'Обзор сделок'],
       },
       cesium: {
         title: 'Cesium 3D',
         desc: 'Демо 3D-визуализации планетарного масштаба на Cesium.',
-        cta: 'Скоро',
+        cta: 'Открыть Cesium',
         tags: ['Глобальный рельеф', 'Пространство-время', 'Наклонная съёмка'],
       },
       arcgis: {
@@ -2221,13 +2221,13 @@ export const messages = {
       trading: {
         title: 'تصور مساعد التداول',
         desc: 'تصور لدعم قرارات التداول — بنية السوق وإشارات وواجهات المراجعة.',
-        cta: 'قريبًا',
+        cta: 'فتح Cesium',
         tags: ['بنية السوق', 'إشارات', 'مراجعة الصفقات'],
       },
       cesium: {
         title: 'Cesium ثلاثي الأبعاد',
         desc: 'عروض تصور ثلاثي الأبعاد بمقياس الأرض مدعومة بـ Cesium.',
-        cta: 'قريبًا',
+        cta: 'فتح Cesium',
         tags: ['تضاريس عالمية', 'زماني مكاني', 'صور مائلة'],
       },
       arcgis: {
